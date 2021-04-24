@@ -11,7 +11,7 @@ class NavBar extends StatelessWidget {
         margin: const EdgeInsets.only(left: 40.0, top: 20, right: 40.0),
         child: Row(children: [
           Profile(),
-          SizedBox(width: 600),
+          SizedBox(width: (MediaQuery.of(context).size.width) / 3),
           Text("Technical Notes",
               style: TextStyle(
                   fontFamily: 'Montserrat', fontSize: 24, color: Colors.white)),
