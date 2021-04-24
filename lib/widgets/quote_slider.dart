@@ -11,7 +11,7 @@ class QuoteSlider extends StatefulWidget {
 }
 
 class _QuoteSliderState extends State<QuoteSlider> {
-  int _quoteIndex = 0;
+  // int _quoteIndex = 0;
   List<Widget> quoteList = [
     Column(children: [
       SizedBox(height: 10),
@@ -58,7 +58,7 @@ class _QuoteSliderState extends State<QuoteSlider> {
         // enableInfiniteScroll: true,
         onPageChanged: (index, reason) {
           setState(() {
-            _quoteIndex = index;
+            // _quoteIndex = index;
           });
         },
       ),
