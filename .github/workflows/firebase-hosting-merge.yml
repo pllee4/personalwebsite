@@ -17,8 +17,7 @@ jobs:
           channel: "stable" # 'dev', 'alpha', default to: 'stable'
       - run: flutter pub get
       - run: flutter build web
-        with:
-          continue-on-error: true
+        continue-on-error: true
       - uses: canastro/copy-file-action@master
         with:
           source: "lib_bugfix/dynamic_theme.dart"
