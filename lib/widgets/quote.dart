@@ -2,14 +2,17 @@ import 'package:catex/catex.dart';
 import 'package:flutter/material.dart';
 
 class Quote extends StatelessWidget {
-  Quote(String quote, double fontSize, Color color) {
-    this.quote = quote;
-    this.fontSize = fontSize;
-    this.color = color;
-  }
-  String quote;
-  double fontSize;
-  Color color;
+  final String quote;
+  final double fontSize;
+  final Color color;
+
+  Quote(
+      {Key key,
+      @required this.quote,
+      this.fontSize = 42,
+      this.color = Colors.white})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle.merge(
