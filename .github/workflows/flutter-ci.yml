@@ -22,22 +22,22 @@ jobs:
         with:
           channel: "stable" # 'dev', 'alpha', default to: 'stable'
 
-      - name: Get flutter dependencies
+      # Get flutter dependencies
       - run: flutter pub get
 
-      - name: Format check
+      # Format check
       - run: flutter format --set-exit-if-changed .
 
-      - name: Analyze
+      # Analyze
       - run: flutter analyze .
 
-      - name: Widget test
+      # Widget test
       - run: flutter test
 
-      - name: Building APK
+      # Building APK
       - run: flutter build apk
-      # - name: Upload APK
-      # - uses: actions/upload-artifact@v1
-      #   with:
-      #     name: release-apk
-      #     path: build/app/outputs/apk/release/app-release.apk
+        # - name: Upload APK
+        # - uses: actions/upload-artifact@v1
+        #   with:
+        #     name: release-apk
+        #     path: build/app/outputs/apk/release/app-release.apk
