@@ -17,16 +17,16 @@ jobs:
           channel: "stable" # 'dev', 'alpha', default to: 'stable'
       - run: flutter pub get
       - run: flutter build web
-        continue-on-error: true
-      - uses: canastro/copy-file-action@master
-        with:
-          source: "lib_bugfix/dynamic_theme.dart"
-          target: "/opt/hostedtoolcache/flutter/2.0.5-stable/x64/.pub-cache/hosted/pub.dartlang.org/dynamic_theme-1.0.1/lib/dynamic_theme.dart"
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PINLOONLEE }}"
-          channelId: live
-          projectId: pinloonlee
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
+      #   continue-on-error: true
+      # - uses: canastro/copy-file-action@master
+      #   with:
+      #     source: "lib_bugfix/dynamic_theme.dart"
+      #     target: "/opt/hostedtoolcache/flutter/2.0.5-stable/x64/.pub-cache/hosted/pub.dartlang.org/dynamic_theme-1.0.1/lib/dynamic_theme.dart"
+      # - uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: "${{ secrets.GITHUB_TOKEN }}"
+      #     firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PINLOONLEE }}"
+      #     channelId: live
+      #     projectId: pinloonlee
+      #   env:
+      #     FIREBASE_CLI_PREVIEWS: hostingchannels
