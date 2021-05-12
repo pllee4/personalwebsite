@@ -1,4 +1,3 @@
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:personalwebsite/widgets/nav_bar_item.dart';
 import 'package:personalwebsite/widgets/profile.dart';
