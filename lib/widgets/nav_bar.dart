@@ -1,36 +1,53 @@
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:personalwebsite/widgets/nav_bar_item.dart';
 import 'package:personalwebsite/widgets/profile.dart';
 
-class NavBar extends StatelessWidget {
-  const NavBar({Key key}) : super(key: key);
+class NavBar extends StatefulWidget {
+  NavBar({Key key}) : super(key: key);
 
+  @override
+  _NavBarState createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
+  String _itemPressed = "";
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(left: 40.0, top: 20, right: 40.0),
-        child: Row(children: [
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           Profile(),
-          SizedBox(width: (MediaQuery.of(context).size.width) / 3),
-          Text("Technical Notes",
-              style: TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 24, color: Colors.white)),
-          SizedBox(width: 30),
-          Text("Projects",
-              style: TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 24, color: Colors.white)),
-          IconButton(
-            icon: Icon(Icons.brightness_6),
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            color: Colors.white,
-            onPressed: () {
-              DynamicTheme.of(context).setBrightness(
-                  Theme.of(context).brightness == Brightness.dark
-                      ? Brightness.light
-                      : Brightness.dark);
-            },
-          ),
+          NavBarItem(
+              name: "Home",
+              onPressed: (String itemPressed) {
+                setState(() => _itemPressed = itemPressed);
+              },
+              itemPressed: _itemPressed),
+          NavBarItem(
+              name: "About",
+              onPressed: (String itemPressed) {
+                setState(() => _itemPressed = itemPressed);
+              },
+              itemPressed: _itemPressed),
+          NavBarItem(
+              name: "Technical Notes",
+              onPressed: (String itemPressed) {
+                setState(() => _itemPressed = itemPressed);
+              },
+              itemPressed: _itemPressed),
+          NavBarItem(
+              name: "Projects",
+              onPressed: (String itemPressed) {
+                setState(() => _itemPressed = itemPressed);
+              },
+              itemPressed: _itemPressed),
+          NavBarItem(
+              name: "Achievements",
+              onPressed: (String itemPressed) {
+                setState(() => _itemPressed = itemPressed);
+              },
+              itemPressed: _itemPressed),
         ]));
   }
 }
