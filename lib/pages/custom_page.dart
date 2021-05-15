@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:personalwebsite/widgets/nav_bar.dart';
 import 'package:personalwebsite/widgets/quote_slider.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+class CustomPage extends StatelessWidget {
+  final String pageName;
+  const CustomPage({Key key, @required this.pageName}) : super(key: key);
 
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +22,25 @@ class _HomePageState extends State<HomePage> {
       Column(children: <Widget>[
         NavBar(),
         SizedBox(height: (MediaQuery.of(context).size.height) / 4 - 10.0),
-        QuoteSlider(),
+        getCustomPage(pageName),
       ]),
     ])));
+  }
+
+  Widget getCustomPage(String pageName) {
+    switch (pageName) {
+      case "Home":
+        return QuoteSlider();
+      case "About":
+        return Text("About");
+      case "Technical Notes":
+        return Text("Technical Notes");
+      case "Projects":
+        return Text("Projects");
+      case "Achievements":
+        return Text("Achievements");
+      default:
+        return Text("Page not found");
+    }
   }
 }
