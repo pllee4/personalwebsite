@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personalwebsite/pages/technical_notes.dart';
 import 'package:personalwebsite/widgets/nav_bar.dart';
 import 'package:personalwebsite/widgets/quote_slider.dart';
 
@@ -21,26 +22,28 @@ class CustomPage extends StatelessWidget {
       ])),
       Column(children: <Widget>[
         NavBar(),
-        SizedBox(height: (MediaQuery.of(context).size.height) / 4 - 10.0),
-        getCustomPage(pageName),
+        ...getCustomPage(pageName, context),
       ]),
     ])));
   }
 
-  Widget getCustomPage(String pageName) {
+  List<Widget> getCustomPage(String pageName, BuildContext context) {
     switch (pageName) {
       case "Home":
-        return QuoteSlider();
+        return [
+          SizedBox(height: (MediaQuery.of(context).size.height) / 4 - 10.0),
+          QuoteSlider()
+        ];
       case "About":
-        return Text("About");
+        return [Text("About")];
       case "Technical Notes":
-        return Text("Technical Notes");
+        return [TechnicalNotes()];
       case "Projects":
-        return Text("Projects");
+        return [Text("Projects")];
       case "Achievements":
-        return Text("Achievements");
+        return [Text("Achievements")];
       default:
-        return Text("Page not found");
+        return [Text("Page not found")];
     }
   }
 }
