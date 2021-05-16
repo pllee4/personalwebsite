@@ -9,7 +9,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       CircleAvatar(
-          backgroundImage: AssetImage('images/profile.png'), radius: 70),
+          backgroundImage: AssetImage('images/profile.png'), radius: 45),
       SizedBox(width: 30),
       Text('Pin Loon',
           style: TextStyle(

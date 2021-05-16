@@ -31,7 +31,7 @@ class CustomPage extends StatelessWidget {
     switch (pageName) {
       case "Home":
         return [
-          SizedBox(height: (MediaQuery.of(context).size.height) / 4 - 10.0),
+          SizedBox(height: (MediaQuery.of(context).size.height) / 3.5 - 10.0),
           QuoteSlider()
         ];
       case "About":
