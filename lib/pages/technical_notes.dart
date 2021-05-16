@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personalwebsite/widgets/custom_expansion_tile.dart';
 
 class TechnicalNotes extends StatefulWidget {
   TechnicalNotes({Key key}) : super(key: key);
@@ -8,70 +9,82 @@ class TechnicalNotes extends StatefulWidget {
 }
 
 class _TechnicalNotesState extends State<TechnicalNotes> {
+  // with SingleTickerProviderStateMixin {
   ScrollController _scrollControllerTitle, _scrollControllerContent;
+  GlobalKey _sidebarKey;
+  final List<Map<String, dynamic>> tabData = [
+    {
+      'title': 'Linux',
+      'children': [
+        {'title': 'Wireguard'},
+        {'title': 'GCC'},
+        {'title': 'Conan'},
+      ],
+    },
+    {
+      'title': 'RTOS',
+      'children': [
+        {
+          'title': 'Zephyr',
+          'children': [
+            {'title': 'Add in custom board configuration'},
+          ],
+        },
+      ],
+    },
+    {
+      'title': 'Microcontroller',
+      'children': [
+        {'title': 'STM32'},
+        {'title': 'Raspberry Pi'},
+      ],
+    },
+    {
+      'title': 'Application platform',
+      'children': [
+        {'title': 'Docker'},
+      ],
+    },
+    {
+      'title': 'Git',
+      'children': [
+        {'title': 'Create SSH Key'},
+        {'title': 'Gitlab CI'},
+        {'title': 'Github Workflows'},
+      ]
+    },
+  ];
+
+  String tab;
+  void setTab(String newTab) {
+    setState(() {
+      tab = newTab;
+      print(tab);
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     _scrollControllerTitle = ScrollController();
     _scrollControllerContent = ScrollController();
+    _sidebarKey = GlobalKey();
   }
 
   @override
   Widget build(BuildContext context) {
+    final sidebar = CustomExpansionTile.fromJson(
+      key: _sidebarKey,
+      tabs: tabData,
+      onTabChanged: setTab,
+    );
     return Expanded(
         child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Expanded(
           child: Scrollbar(
               isAlwaysShown: true,
               controller: _scrollControllerTitle,
-              child: SingleChildScrollView(
-                  child: Column(children: <Widget>[
-                ExpansionTile(
-                    title: Text('RTOS', style: TextStyle(color: Colors.white)),
-                    childrenPadding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 30),
-                    tilePadding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 40),
-                    children: <Widget>[
-                      ListTile(
-                          title: Text('Zephyr',
-                              style: TextStyle(color: Colors.white)),
-                          onTap: () {
-                            // Update the state of the app.
-                            // ...
-                          })
-                    ]),
-                ExpansionTile(
-                    title: Text('Linux', style: TextStyle(color: Colors.white)),
-                    childrenPadding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 30),
-                    tilePadding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width / 40),
-                    children: <Widget>[
-                      ListTile(
-                          title: Text('Wireguard',
-                              style: TextStyle(color: Colors.white)),
-                          onTap: () {
-                            // Update the state of the app.
-                            // ...
-                          }),
-                      ListTile(
-                          title: Text('GCC',
-                              style: TextStyle(color: Colors.white)),
-                          onTap: () {
-                            // Update the state of the app.
-                            // ...
-                          }),
-                      ListTile(
-                          title: Text('Conan',
-                              style: TextStyle(color: Colors.white)),
-                          onTap: () {
-                            // Update the state of the app.
-                            // ...
-                          })
-                    ]),
-              ])))),
+              child: SingleChildScrollView(child: sidebar))),
       Expanded(
           flex: 5,
           child: Scrollbar(
