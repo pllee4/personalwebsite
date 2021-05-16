@@ -46,6 +46,8 @@ class _MyAppState extends State<MyApp> {
             ? ThemeData(
                 primarySwatch: Colors.blueGrey,
                 backgroundColor: Colors.white,
+                accentColor: Colors.white,
+                unselectedWidgetColor: Colors.blueGrey[300],
                 cardColor: Colors.blueGrey[50],
                 primaryTextTheme: TextTheme(
                   button: TextStyle(
@@ -68,6 +70,8 @@ class _MyAppState extends State<MyApp> {
             : ThemeData(
                 primarySwatch: Colors.blueGrey,
                 backgroundColor: Colors.blueGrey[900],
+                accentColor: Colors.white,
+                unselectedWidgetColor: Colors.blueGrey[300],
                 cardColor: Colors.black,
                 primaryTextTheme: TextTheme(
                   button: TextStyle(
