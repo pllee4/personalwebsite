@@ -1,6 +1,9 @@
 # personalwebsite
 
 A new Flutter project.
+![master](https://github.com/pllee4/personalwebsite/workflows/Deployment/badge.svg)
+
+![devel](https://github.com/pllee4/personalwebsite/workflows/Flutter%20CI/badge.svg)
 
 ## Getting Started
 
