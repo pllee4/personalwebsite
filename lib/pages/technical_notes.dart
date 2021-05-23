@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:personalwebsite/widgets/custom_expansion_tile.dart';
 
 class TechnicalNotes extends StatefulWidget {
@@ -13,6 +15,7 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
   ScrollController _scrollControllerTitle, _scrollControllerContent;
   GlobalKey _sidebarKey;
   final List<Map<String, dynamic>> tabData = [
+    {'title': 'Content'},
     {
       'title': 'Linux',
       'children': [
@@ -55,11 +58,13 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
     },
   ];
 
-  String tab;
+  String tab = "Content";
   void setTab(String newTab) {
     setState(() {
       tab = newTab;
       print(tab);
+      print(_sidebarKey);
+      print(tab[0].toLowerCase() + tab.substring(1));
     });
   }
 
@@ -93,24 +98,33 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
               child: SingleChildScrollView(
                   child: Column(children: <Widget>[
                 Container(
-                  color: Colors.yellow, // Yellow
-                  height: 320.0,
-                ),
-                Container(
-                  color: Colors.blue, // Yellow
-                  height: 320.0,
-                ),
-                Container(
-                  color: Colors.green, // Yellow
-                  height: 320.0,
-                ),
-                Container(
-                  color: Colors.orange, // Yellow
-                  height: 320.0,
-                ),
-                Container(
-                  color: Colors.pink, // Yellow
-                  height: 320.0,
+                  color: Colors.blueGrey[900].withOpacity(0.6),
+                  height: MediaQuery.of(context).size.height,
+                  child: FutureBuilder(
+                      future: rootBundle.loadString("markdown/" +
+                          tab[0].toLowerCase() +
+                          tab.substring(1) +
+                          ".md"),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<String> snapshot) {
+                        if (snapshot.hasData) {
+                          return Markdown(
+                              data: snapshot.data,
+                              styleSheet: MarkdownStyleSheet(
+                                  p: TextStyle(fontSize: 18),
+                                  code: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
+                                  codeblockDecoration: BoxDecoration(
+                                    color: Colors.black87.withOpacity(0.6),
+                                  )));
+                        }
+
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }),
                 ),
               ]))))
     ]));
