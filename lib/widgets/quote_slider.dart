@@ -45,24 +45,26 @@ class _QuoteSliderState extends State<QuoteSlider> {
   @override
   Widget build(BuildContext context) {
     var quoteSliders = generateQuotes();
-    return CarouselSlider(
-      carouselController: _quoteCarouselController,
-      options: CarouselOptions(
-        height: (MediaQuery.of(context).size.height) / 3,
-        autoPlay: true,
-        autoPlayInterval: Duration(seconds: 5),
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
-        autoPlayCurve: Curves.fastOutSlowIn,
-        pauseAutoPlayOnTouch: true,
-        aspectRatio: 2.0,
-        // enableInfiniteScroll: true,
-        onPageChanged: (index, reason) {
-          setState(() {
-            // _quoteIndex = index;
-          });
-        },
-      ),
-      items: quoteSliders,
-    );
+    return Material(
+        type: MaterialType.transparency,
+        child: CarouselSlider(
+          carouselController: _quoteCarouselController,
+          options: CarouselOptions(
+            height: (MediaQuery.of(context).size.height) / 3,
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 5),
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            pauseAutoPlayOnTouch: true,
+            aspectRatio: 2.0,
+            // enableInfiniteScroll: true,
+            onPageChanged: (index, reason) {
+              setState(() {
+                // _quoteIndex = index;
+              });
+            },
+          ),
+          items: quoteSliders,
+        ));
   }
 }

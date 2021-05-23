@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'glowing_text.dart';
+// import 'glowing_text.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key key}) : super(key: key);
@@ -9,9 +9,19 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(children: [
       CircleAvatar(
-          backgroundImage: AssetImage('images/profile.png'), radius: 70),
+          backgroundImage: AssetImage('images/profile.png'), radius: 45),
       SizedBox(width: 30),
-      GlowingText(text: 'Pin Loon'),
+      Text('Pin Loon',
+          style: TextStyle(
+              shadows: [
+                Shadow(
+                    blurRadius: 2.0, color: Colors.white, offset: Offset(0, 0))
+              ],
+              fontFamily: 'Benne',
+              fontSize: 42,
+              letterSpacing: 1,
+              color: Colors.white))
+      // GlowingText(text: 'Pin Loon'),
     ]);
   }
 }
