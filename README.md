@@ -1,20 +1,16 @@
 # personalwebsite
 
-A new Flutter project.
-
 ![master](https://github.com/pllee4/personalwebsite/workflows/Deployment/badge.svg)
-
 ![devel](https://github.com/pllee4/personalwebsite/workflows/Flutter%20CI/badge.svg)
 
-## Getting Started
+A Flutter project hosted on [here](https://pinloon-lee.web.app/)
 
-This project is a starting point for a Flutter application.
+## Notes
+- currently the support for different screen size is not yet done
+- the site can only be viewed properly under resolution of 1920x1080 for desktop for now
+  
+## References
 
-A few resources to get you started if this is your first Flutter project:
+- https://levelup.gitconnected.com/build-a-web-app-with-flutter-and-deploy-it-to-firebase-hosting-3ee020b0e3db
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

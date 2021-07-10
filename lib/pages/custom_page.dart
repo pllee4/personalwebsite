@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personalwebsite/pages/technical_notes.dart';
+// import 'package:personalwebsite/pages/technical_notes.dart';
 import 'package:personalwebsite/widgets/nav_bar.dart';
 import 'package:personalwebsite/widgets/quote_slider.dart';
 
@@ -37,7 +37,8 @@ class CustomPage extends StatelessWidget {
       case "About":
         return [Text("About")];
       case "Technical Notes":
-        return [TechnicalNotes()];
+        // return [TechnicalNotes()];
+        return [Text("Technical Notes")];
       case "Projects":
         return [Text("Projects")];
       case "Achievements":
