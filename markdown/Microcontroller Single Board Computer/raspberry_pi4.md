@@ -80,5 +80,20 @@ $ sudo systemctl disable serial-getty@ttyS0.service
 $ sudo chmod 0666 /dev/ttyS0
 ```
 
+## Disable MAC address randomization
+
+- To bind your Raspi to static ip address assigned by router, you would hope the MAC address is always the same for the Raspi. 
+
+- To avoid randomization, create file at /etc/NetworkManager/conf.d/100-disable-wifi-mac-randomization.conf
+
+```
+[connection]
+wifi.mac-address-randomization=1
+ 
+[device]
+wifi.scan-rand-mac-address=no
+```
+
+
 ## References
 1. https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
