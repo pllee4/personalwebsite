@@ -66,3 +66,23 @@ $ cd /etc/NetworkManager/system-connections
 $ sudo cat <saved_network_connection>
 ```
 
+## Symlink
+
+### To create symlink
+```
+$ ln -s <path to the file/folder to be linked> <the path of the link to be created>
+```
+
+- -s flag means the link is soft, without -s, by default it would be hard link
+
+### To remove symlink
+
+```
+$ unlink <path-to-symlink>
+```
+
+or
+
+```
+$ rm <path-to-symlink>
+```
