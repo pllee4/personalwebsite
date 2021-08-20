@@ -86,3 +86,20 @@ or
 ```
 $ rm <path-to-symlink>
 ```
+
+## Swap memory
+
+### Check swap memory
+
+```
+$ free -m
+```
+
+### Clear swap memory
+
+- we can cycleoff the swap memory but turn it off and on again
+
+```
+$ sudo swapoff -a
+$ sudo swapon -a
+```
