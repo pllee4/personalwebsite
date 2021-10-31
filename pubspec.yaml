@@ -27,7 +27,6 @@ dependencies:
   carousel_slider: ^3.0.0
   catex: ^0.0.1+8
   cupertino_icons: ^1.0.2
-  dynamic_theme: ^1.0.1
   flutter_markdown: ^0.6.2
 
 dev_dependencies:
