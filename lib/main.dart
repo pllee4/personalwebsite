@@ -55,7 +55,27 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Pin Loon Lee',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.from(colorScheme: const ColorScheme.light()),
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        dialogBackgroundColor: Colors.transparent,
+        textTheme: TextTheme(
+            headline1: TextStyle(color: Colors.white70, fontSize: 20),
+            headline2: TextStyle(color: Colors.white70, fontSize: 20),
+            headline3: TextStyle(color: Colors.white, fontSize: 20),
+            headline4: TextStyle(color: Colors.white, fontSize: 20),
+            headline5: TextStyle(color: Colors.white, fontSize: 20),
+            headline6: TextStyle(color: Colors.white70, fontSize: 18),
+            subtitle1: TextStyle(color: Colors.white, fontSize: 18),
+            subtitle2: TextStyle(color: Colors.white, fontSize: 18),
+            bodyText1: TextStyle(color: Colors.white, fontSize: 18),
+            bodyText2: TextStyle(color: Colors.white, fontSize: 18),
+            button: TextStyle(
+                color: Colors.blueGrey[200],
+                decorationColor: Colors.blueGrey[50]),
+            caption: TextStyle(color: Colors.white, fontSize: 18),
+            overline: TextStyle(color: Colors.white, fontSize: 18)),
+        colorScheme: const ColorScheme.light(),
+      ),
       darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
       onGenerateRoute: _generateRoute,
       initialRoute: '/Home',
