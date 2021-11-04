@@ -103,3 +103,17 @@ $ free -m
 $ sudo swapoff -a
 $ sudo swapon -a
 ```
+
+## Scan ip address of devices
+
+### Dependencies
+
+```
+$ sudo apt install nmap
+```
+
+### Scan
+
+```
+$ sudo nmap -sn <ip_address>/24 // for example 192.168.10.0/24
+```
