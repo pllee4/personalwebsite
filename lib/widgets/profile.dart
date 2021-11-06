@@ -8,11 +8,6 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      CircleAvatar(
-          backgroundColor: Colors.transparent,
-          backgroundImage: AssetImage('images/profile.png'),
-          radius: 45),
-      SizedBox(width: 30),
       Text('Pin Loon',
           style: TextStyle(
               shadows: [

@@ -14,7 +14,7 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(left: 40.0, top: 5, right: 40.0),
+        margin: const EdgeInsets.only(left: 40.0, top: 50, right: 40.0),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           Profile(),
           NavBarItem(
