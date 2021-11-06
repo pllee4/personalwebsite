@@ -86,3 +86,34 @@ or
 ```
 $ rm <path-to-symlink>
 ```
+
+## Swap memory
+
+### Check swap memory
+
+```
+$ free -m
+```
+
+### Clear swap memory
+
+- we can cycleoff the swap memory but turn it off and on again
+
+```
+$ sudo swapoff -a
+$ sudo swapon -a
+```
+
+## Scan ip address of devices
+
+### Dependencies
+
+```
+$ sudo apt install nmap
+```
+
+### Scan
+
+```
+$ sudo nmap -sn <ip_address>/24 // for example 192.168.10.0/24
+```
