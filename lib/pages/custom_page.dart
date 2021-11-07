@@ -16,7 +16,7 @@ class CustomPage extends StatelessWidget {
           child: Stack(children: <Widget>[
         Positioned.fill(
             child: Ink.image(
-                image: AssetImage('images/darkgalaxy.jpg'),
+                image: AssetImage('images/dark-green.jpg'),
                 fit: BoxFit.cover,
                 child: Container())),
       ])),
@@ -29,7 +29,7 @@ class CustomPage extends StatelessWidget {
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
     onPrimary: Colors.white,
-    primary: Colors.blueGrey[900],
+    primary: Colors.teal[900],
     minimumSize: Size(140, 70),
     padding: EdgeInsets.symmetric(horizontal: 16),
     shape: const RoundedRectangleBorder(
