@@ -17,7 +17,7 @@ class AnimatedText extends StatelessWidget {
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "worked with C/ C++",
+          "work with C/ C++",
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
@@ -25,7 +25,7 @@ class AnimatedText extends StatelessWidget {
           speed: Duration(milliseconds: 60),
         ),
         TyperAnimatedText(
-          "wrote algorithms for robots",
+          "write algorithms for robots",
           speed: Duration(milliseconds: 60),
         )
       ],
