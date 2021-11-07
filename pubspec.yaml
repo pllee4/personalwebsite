@@ -28,6 +28,7 @@ dependencies:
   catex: ^0.0.1+8
   cupertino_icons: ^1.0.2
   flutter_markdown: ^0.6.2
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:
