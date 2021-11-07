@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 
 class AnimatedText extends StatelessWidget {
   const AnimatedText({
@@ -98,8 +98,7 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Github",
                             onPressed: () {
-                              html.window
-                                  .open('https://github.com/pllee4', "_blank");
+                              launchURL('https://github.com/pllee4');
                             },
                           )),
                           Expanded(
@@ -108,9 +107,8 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Linkedin",
                             onPressed: () {
-                              html.window.open(
-                                  'http://www.linkedin.com/in/pinloonlee',
-                                  "_blank");
+                              launchURL(
+                                  'http://www.linkedin.com/in/pinloonlee');
                             },
                           )),
                           Expanded(
@@ -119,8 +117,7 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Gitbook",
                             onPressed: () {
-                              html.window
-                                  .open('https://pinloon.gitbook.io', "_blank");
+                              launchURL('https://pinloon.gitbook.io');
                             },
                           )),
                           Expanded(
@@ -129,8 +126,7 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Email",
                             onPressed: () {
-                              html.window.open(
-                                  'mailto:pinloon_0428@hotmail.com', "_blank");
+                              launchURL('mailto:pinloon_0428@hotmail.com');
                             },
                           )),
                         ],
@@ -140,9 +136,8 @@ class About extends StatelessWidget {
                     child: OutlinedButton(
                       style: outlineButtonStyle,
                       onPressed: () {
-                        html.window.open(
-                            'https://drive.google.com/file/d/1HvqbzHis658uvnWg77-bdHW3RR4RwAPd/view?usp=sharing',
-                            "pdf");
+                        launchURL(
+                            'https://drive.google.com/file/d/1HvqbzHis658uvnWg77-bdHW3RR4RwAPd/view?usp=sharing');
                       },
                       child: Text('Resume',
                           style: TextStyle(
@@ -177,4 +172,7 @@ class About extends StatelessWidget {
               ])),
         ]));
   }
+
+  void launchURL(url) async =>
+      await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
 }
