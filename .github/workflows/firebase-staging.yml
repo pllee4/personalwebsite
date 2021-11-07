@@ -17,6 +17,7 @@ jobs:
         with:
           channel: "stable" # 'dev', 'alpha', default to: 'stable'
       - run: flutter pub get
+      - run: flutter analyze .
       - run: flutter config --enable-web && flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
