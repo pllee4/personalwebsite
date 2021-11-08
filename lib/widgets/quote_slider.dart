@@ -21,11 +21,11 @@ class _QuoteSliderState extends State<QuoteSlider> {
     QuoteAuthor(
         quote: "Work hard in silence, let your success be your noise",
         author: "Frank Ocean",
-        backgroundColor: Colors.blueGrey),
+        backgroundColor: Colors.cyan[900]),
     QuoteAuthor(
         quote: "Growth and comfort do not coexist",
         author: "Ginni Rometty",
-        backgroundColor: Colors.blueAccent),
+        backgroundColor: Colors.green[800]),
   ];
 
   List<T> map<T>(List list, Function handler) {

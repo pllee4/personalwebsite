@@ -8,6 +8,8 @@ A Flutter project hosted on [here](https://pinloon-lee.web.app/)
 
 For latest [preview](https://pinloon-lee--staging-m94rjpji.web.app/)
 
+For development [preview](https://pinloon-lee--development-hkmpnttw.web.app/)
+
 ## Notes
 - currently the support for different screen size is not yet done
 - the site can only be viewed properly under resolution of 1920x1080 for desktop for now
