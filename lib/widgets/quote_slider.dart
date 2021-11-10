@@ -50,13 +50,15 @@ class _QuoteSliderState extends State<QuoteSlider> {
         child: CarouselSlider(
           carouselController: _quoteCarouselController,
           options: CarouselOptions(
+            viewportFraction: 1.0,
             height: (MediaQuery.of(context).size.height) / 3,
             autoPlay: true,
             autoPlayInterval: Duration(seconds: 5),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
             pauseAutoPlayOnTouch: true,
-            aspectRatio: 2.0,
+            aspectRatio: (MediaQuery.of(context).size.width) /
+                (MediaQuery.of(context).size.height),
             // enableInfiniteScroll: true,
             onPageChanged: (index, reason) {
               setState(() {
