@@ -3,6 +3,7 @@ import 'package:personalwebsite/pages/about.dart';
 // import 'package:personalwebsite/pages/technical_notes.dart';
 import 'package:personalwebsite/widgets/nav_bar.dart';
 import 'package:personalwebsite/widgets/quote_slider.dart';
+import 'package:personalwebsite/widgets/responsive_widget.dart';
 
 class CustomPage extends StatelessWidget {
   final String pageName;
@@ -11,21 +12,39 @@ class CustomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: ResponsiveWidget.isLargeScreen(context)
+            ? null
+            : AppBar(
+                backgroundColor: Colors.grey[900],
+                leading: Builder(
+                  builder: (context) => IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: Icon(Icons.menu),
+                  ),
+                ),
+              ),
+        drawer: Drawer(
+          child: NavBar(),
+        ),
         body: SizedBox.expand(
             child: Stack(children: <Widget>[
-      Container(
-          child: Stack(children: <Widget>[
-        Positioned.fill(
-            child: Ink.image(
-                image: AssetImage('images/dark-green.jpg'),
-                fit: BoxFit.cover,
-                child: Container())),
-      ])),
-      Column(children: <Widget>[
-        NavBar(),
-        ...getCustomPage(pageName, context),
-      ]),
-    ])));
+          Container(
+              child: Stack(children: <Widget>[
+            Positioned.fill(
+                child: Ink.image(
+                    image: AssetImage('images/dark-green.jpg'),
+                    fit: BoxFit.cover,
+                    child: Container())),
+          ])),
+          Column(children: <Widget>[
+            ResponsiveWidget.isLargeScreen(context)
+                ? NavBar()
+                : SizedBox(width: 0, height: 0),
+            ...getCustomPage(pageName, context),
+          ]),
+        ])));
   }
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
