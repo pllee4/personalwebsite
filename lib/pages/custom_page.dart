@@ -31,19 +31,21 @@ class CustomPage extends StatelessWidget {
         body: SizedBox.expand(
             child: Stack(children: <Widget>[
           Container(
+              constraints: BoxConstraints(maxWidth: 1920),
               child: Stack(children: <Widget>[
-            Positioned.fill(
-                child: Ink.image(
-                    image: AssetImage('images/dark-green.jpg'),
-                    fit: BoxFit.cover,
-                    child: Container())),
-          ])),
-          Column(children: <Widget>[
+                Positioned.fill(
+                    child: Ink.image(
+                        image: AssetImage('images/dark-green.jpg'),
+                        fit: BoxFit.cover,
+                        child: Container())),
+              ])),
+          SingleChildScrollView(
+              child: Column(children: <Widget>[
             ResponsiveWidget.isLargeScreen(context)
                 ? NavBar()
                 : SizedBox(width: 0, height: 0),
             ...getCustomPage(pageName, context),
-          ]),
+          ])),
         ])));
   }
 
@@ -61,7 +63,7 @@ class CustomPage extends StatelessWidget {
     switch (pageName) {
       case "Home":
         return [
-          SizedBox(height: (MediaQuery.of(context).size.height) / 3.5 - 10.0),
+          SizedBox(height: (MediaQuery.of(context).size.height) / 3.5),
           QuoteSlider(),
           ElevatedButton(
             style: raisedButtonStyle,
