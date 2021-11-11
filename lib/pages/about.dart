@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:personalwebsite/widgets/responsive_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AnimatedText extends StatelessWidget {
@@ -65,7 +66,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(left: 40.0, top: 50, right: 40.0),
+        margin: const EdgeInsets.only(left: 20.0, top: 50, right: 20.0),
         child: Row(children: [
           Expanded(
             flex: 3,
@@ -75,16 +76,24 @@ class About extends StatelessWidget {
                   CircleAvatar(
                       backgroundColor: Colors.transparent,
                       backgroundImage: AssetImage('images/profile-clear.png'),
-                      radius: 200),
-                  Row(children: <Widget>[
-                    SizedBox(width: 220.0, height: 100.0),
-                    Text(
-                      "I",
-                      style: TextStyle(color: Colors.teal[600], fontSize: 43.0),
-                    ),
-                    const SizedBox(width: 20.0, height: 100.0),
-                    AnimatedText()
-                  ]),
+                      radius:
+                          ResponsiveWidget.isLargeScreen(context) ? 150 : 100),
+                  Container(
+                      alignment: Alignment.center,
+                      width: 250,
+                      child: Center(
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                            SizedBox(width: 0.0, height: 100.0),
+                            Text(
+                              "I",
+                              style: TextStyle(
+                                  color: Colors.teal[600], fontSize: 43.0),
+                            ),
+                            SizedBox(width: 20.0, height: 100.0),
+                            AnimatedText()
+                          ]))),
                   Container(
                       alignment: Alignment.center,
                       width: 500,
@@ -146,30 +155,34 @@ class About extends StatelessWidget {
                   )
                 ]),
           ),
-          Expanded(
-              flex: 5,
-              child: Column(children: [
-                Row(
-                  children: <Widget>[
-                    Text("I'm ",
-                        style: TextStyle(color: Colors.white, fontSize: 40.0)),
-                    Text("Lee Pin Loon",
-                        style:
-                            TextStyle(color: Colors.teal[600], fontSize: 60.0)),
-                  ],
-                ),
-                const SizedBox(height: 50.0),
-                Row(children: <Widget>[
-                  Text("5",
-                      style:
-                          TextStyle(color: Colors.teal[600], fontSize: 65.0)),
-                  Text("++ Years of Experience in ",
-                      style: TextStyle(color: Colors.white, fontSize: 40.0)),
-                  Text("Robotics",
-                      style:
-                          TextStyle(color: Colors.teal[600], fontSize: 40.0)),
-                ]),
-              ])),
+          ResponsiveWidget.isLargeScreen(context)
+              ? Expanded(
+                  flex: 5,
+                  child: Column(children: [
+                    Row(
+                      children: <Widget>[
+                        Text("I'm ",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 35.0)),
+                        Text("Lee Pin Loon",
+                            style: TextStyle(
+                                color: Colors.teal[600], fontSize: 60.0)),
+                      ],
+                    ),
+                    const SizedBox(height: 50.0, width: 0.0),
+                    Row(children: <Widget>[
+                      Text("5",
+                          style: TextStyle(
+                              color: Colors.teal[600], fontSize: 65.0)),
+                      Text("++ Years of Experience in ",
+                          style:
+                              TextStyle(color: Colors.white, fontSize: 35.0)),
+                      Text("Robotics",
+                          style: TextStyle(
+                              color: Colors.teal[600], fontSize: 35.0)),
+                    ]),
+                  ]))
+              : SizedBox(width: 0, height: 0),
         ]));
   }
 
