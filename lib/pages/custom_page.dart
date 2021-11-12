@@ -31,14 +31,13 @@ class CustomPage extends StatelessWidget {
         body: SizedBox.expand(
             child: Stack(children: <Widget>[
           Container(
-              constraints: BoxConstraints(maxWidth: 1920),
               child: Stack(children: <Widget>[
-                Positioned.fill(
-                    child: Ink.image(
-                        image: AssetImage('images/dark-green.jpg'),
-                        fit: BoxFit.cover,
-                        child: Container())),
-              ])),
+            Positioned.fill(
+                child: Ink.image(
+                    image: AssetImage('images/dark-green.jpg'),
+                    fit: BoxFit.cover,
+                    child: Container())),
+          ])),
           SingleChildScrollView(
               child: Column(children: <Widget>[
             ResponsiveWidget.isLargeScreen(context)
