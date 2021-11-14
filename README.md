@@ -10,9 +10,19 @@ For latest [preview](https://pinloon-lee--staging-m94rjpji.web.app/)
 
 For development [preview](https://pinloon-lee--development-hkmpnttw.web.app/)
 
-## Notes
-- currently the support for different screen size is not yet done
-- the site can only be viewed properly under resolution of 1920x1080 for desktop for now
+## TODO list
+
+### Features
+- [x] Responsive screen
+- [ ] Progress indicator for landing 
+- [ ] Single click download button
+
+### Pages
+- [x] Home page
+- [ ] About page
+- [ ] Technical notes page
+- [ ] Project page
+- [ ] Achievement page
   
 ## References
 

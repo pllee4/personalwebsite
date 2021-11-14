@@ -13,10 +13,9 @@ class QuoteSlider extends StatefulWidget {
 class _QuoteSliderState extends State<QuoteSlider> {
   // int _quoteIndex = 0;
   List<Widget> quoteList = [
-    Column(children: [
-      SizedBox(height: 10),
-      Quote(quote: '1.02^{365} = 1377.4'),
-      Quote(quote: '0.98^{365} = 0.0006')
+    ListView(children: [
+      Center(child: Quote(quote: '1.02^{365} = 1377.4')),
+      Center(child: Quote(quote: '0.98^{365} = 0.0006'))
     ]),
     QuoteAuthor(
         quote: "Work hard in silence, let your success be your noise",
@@ -50,13 +49,15 @@ class _QuoteSliderState extends State<QuoteSlider> {
         child: CarouselSlider(
           carouselController: _quoteCarouselController,
           options: CarouselOptions(
+            viewportFraction: 1.0,
             height: (MediaQuery.of(context).size.height) / 3,
             autoPlay: true,
             autoPlayInterval: Duration(seconds: 5),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
             pauseAutoPlayOnTouch: true,
-            aspectRatio: 2.0,
+            aspectRatio: (MediaQuery.of(context).size.width) /
+                (MediaQuery.of(context).size.height),
             // enableInfiniteScroll: true,
             onPageChanged: (index, reason) {
               setState(() {
