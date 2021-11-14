@@ -23,7 +23,7 @@ class QuoteAuthor extends StatefulWidget {
 class _QuoteAuthorState extends State<QuoteAuthor> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return ListView(children: [
       SizedBox(height: 10),
       Text(widget.quote,
           textAlign: TextAlign.center,

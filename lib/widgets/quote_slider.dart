@@ -13,10 +13,9 @@ class QuoteSlider extends StatefulWidget {
 class _QuoteSliderState extends State<QuoteSlider> {
   // int _quoteIndex = 0;
   List<Widget> quoteList = [
-    Column(children: [
-      SizedBox(height: 10),
-      Quote(quote: '1.02^{365} = 1377.4'),
-      Quote(quote: '0.98^{365} = 0.0006')
+    ListView(children: [
+      Center(child: Quote(quote: '1.02^{365} = 1377.4')),
+      Center(child: Quote(quote: '0.98^{365} = 0.0006'))
     ]),
     QuoteAuthor(
         quote: "Work hard in silence, let your success be your noise",
