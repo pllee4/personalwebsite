@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personalwebsite/pages/about.dart';
 import 'package:personalwebsite/pages/home.dart';
+import 'package:personalwebsite/pages/splash_screen.dart';
 // import 'package:personalwebsite/pages/technical_notes.dart';
 import 'package:personalwebsite/widgets/nav_bar.dart';
 import 'package:personalwebsite/widgets/responsive_widget.dart';
@@ -39,12 +40,14 @@ class CustomPage extends StatelessWidget {
                     child: Container())),
           ])),
           SingleChildScrollView(
-              child: Column(children: <Widget>[
-            ResponsiveWidget.isLargeScreen(context)
-                ? NavBar()
-                : SizedBox(width: 0, height: 0),
-            ...getCustomPage(pageName, context),
-          ])),
+              child: pageName == "#"
+                  ? SplashScreen()
+                  : Column(children: <Widget>[
+                      ResponsiveWidget.isLargeScreen(context)
+                          ? NavBar()
+                          : SizedBox(width: 0, height: 0),
+                      ...getCustomPage(pageName, context),
+                    ])),
         ])));
   }
 
