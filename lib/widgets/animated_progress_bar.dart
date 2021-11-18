@@ -25,6 +25,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
             setState(() {});
           });
     _animationController.forward();
+    super.initState();
   }
 
   @override
