@@ -24,7 +24,9 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
           ..addListener(() {
             setState(() {});
           });
-    _animationController.forward();
+    Future.delayed(Duration(milliseconds: 500), () {
+      _animationController.forward();
+    });
     super.initState();
   }
 
