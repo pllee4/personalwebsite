@@ -24,13 +24,13 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
           ..addListener(() {
             setState(() {});
           });
-    super.initState();
+    _animationController.forward();
   }
 
   @override
   void didUpdateWidget(AnimatedProgressBar oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _animationController.duration = Duration(seconds: 1);
+    _animationController.duration = Duration(seconds: 4);
   }
 
   @override
