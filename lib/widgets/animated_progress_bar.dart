@@ -31,7 +31,6 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
   @override
   void didUpdateWidget(AnimatedProgressBar oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _animationController.duration = Duration(seconds: 4);
   }
 
   @override
@@ -51,7 +50,7 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
       LinearProgressIndicator(
         value: (_animation.value) / 100.0,
         color: Colors.teal[800],
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.transparent,
       ),
       SizedBox(height: 30),
       Text((_animation.value).toInt().toString() + "%"),
