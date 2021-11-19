@@ -11,7 +11,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    var duration = Duration(seconds: 2);
+    var duration = Duration(milliseconds: 3500);
     Future.delayed(duration, () {
       Navigator.pushNamed(context, '/Home');
     });

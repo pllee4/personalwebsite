@@ -17,14 +17,14 @@ class _AnimatedProgressBarState extends State<AnimatedProgressBar>
   Animation _animation;
   @override
   void initState() {
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _animationController = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 1500));
     _animation =
         Tween(begin: 0.0, end: widget.percentage).animate(_animationController)
           ..addListener(() {
             setState(() {});
           });
-    Future.delayed(Duration(milliseconds: 500), () {
+    Future.delayed(Duration(seconds: 1), () {
       _animationController.forward();
     });
     super.initState();
