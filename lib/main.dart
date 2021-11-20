@@ -35,8 +35,7 @@ Route<dynamic> _generateRoute(RouteSettings settings) {
           builder: (context) => CustomPage(pageName: "Achievements"));
     default:
       return CustomPageRoute(
-          routeName: "/Home",
-          builder: (context) => CustomPage(pageName: "Home"));
+          routeName: "/#", builder: (context) => CustomPage(pageName: "#"));
   }
 }
 
@@ -78,7 +77,7 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
       onGenerateRoute: _generateRoute,
-      initialRoute: '/Home',
+      initialRoute: '/#',
       onGenerateInitialRoutes: (initialRoute) =>
           [_generateRoute(RouteSettings(name: initialRoute))],
     );

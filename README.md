@@ -14,7 +14,7 @@ For development [preview](https://pinloon-lee--development-hkmpnttw.web.app/)
 
 ### Features
 - [x] Responsive screen
-- [ ] Progress indicator for landing 
+- [x] Splash screen 
 - [ ] Single click download button
 
 ### Pages
