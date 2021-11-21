@@ -9,27 +9,11 @@ class Achievement extends StatelessWidget {
     return Container(
         margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 50),
         alignment: Alignment.center,
-        height: MediaQuery.of(context).size.height / 1.2,
-        child: Stack(children: [
-          Container(
-              child: Row(children: [
-            Expanded(
-              flex: 1,
-              child: VerticalDivider(
-                color: Colors.tealAccent[700],
-                thickness: 1.75,
-                width: 10,
-                indent: 10,
-                endIndent: 10,
-              ),
-            ),
-            Expanded(flex: 8, child: SizedBox(width: 0))
-          ])),
-          Container(
-              child: Expanded(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
+        child: Row(children: [
+          Expanded(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
                 AchievementItem(
                     title: "ABU ROBOCON Tokyo 2017",
                     award: "First Runner Up",
@@ -91,7 +75,7 @@ class Achievement extends StatelessWidget {
                     url:
                         "https://engineering.utm.my/innovationday2019/grandchallenges/",
                     iconData: Icons.info),
-              ])))
+              ]))
         ]));
   }
 }
