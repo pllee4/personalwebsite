@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:personalwebsite/widgets/responsive_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AchievementItem extends StatelessWidget {
@@ -23,29 +24,47 @@ class AchievementItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Expanded(flex: 1, child: CircleAvatar(backgroundColor: Colors.teal[400])),
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Expanded(
+          flex: 1,
+          child: Container(
+              child: Column(children: [
+            SizedBox(width: 0.0, height: 10),
+            CircleAvatar(
+                radius: ResponsiveWidget.isLargeScreen(context) ? 20 : 10,
+                backgroundColor: Colors.teal[400])
+          ]))),
       Expanded(
           flex: 8,
           child: Container(
               child: Column(children: [
-            Row(children: [
-              Text(this.title),
-              SizedBox(width: 20.0, height: 0.0),
-              Text.rich(TextSpan(
-                  text: this.award,
-                  style: TextStyle(color: Colors.tealAccent[700]),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () async {
+            Container(
+                alignment: Alignment.centerLeft,
+                child: Row(children: [
+                  SizedBox(width: 0.0, height: 5.0),
+                  ResponsiveWidget.isLargeScreen(context)
+                      ? Text(this.title)
+                      : Expanded(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [Text(this.title)])),
+                  SizedBox(width: 40.0, height: 0.0),
+                  Text.rich(
+                    TextSpan(
+                        text: this.award,
+                        style: TextStyle(color: Colors.tealAccent[700]),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () async {
+                            if (this.url != null) launchURL(this.url);
+                          }),
+                  ),
+                  IconButton(
+                    icon: Icon(iconData, color: Colors.teal[400]),
+                    onPressed: () {
                       if (this.url != null) launchURL(this.url);
-                    })),
-              IconButton(
-                icon: Icon(iconData, color: Colors.teal[400]),
-                onPressed: () {
-                  if (this.url != null) launchURL(this.url);
-                },
-              ),
-            ]),
+                    },
+                  )
+                ])),
             SizedBox(height: 5.0),
             Row(children: [
               Expanded(
@@ -61,7 +80,8 @@ class AchievementItem extends StatelessWidget {
                         style: TextStyle(color: Colors.grey[350]),
                       ),
                   ]))
-            ])
+            ]),
+            SizedBox(height: 20.0),
           ])))
     ]);
   }
