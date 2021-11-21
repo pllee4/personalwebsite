@@ -48,7 +48,9 @@ class AchievementItem extends StatelessWidget {
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [Text(this.title)])),
-                  SizedBox(width: 40.0, height: 0.0),
+                  ResponsiveWidget.isLargeScreen(context)
+                      ? SizedBox(width: 60.0, height: 0.0)
+                      : SizedBox(width: 10.0, height: 0.0),
                   Text.rich(
                     TextSpan(
                         text: this.award,
