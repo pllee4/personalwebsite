@@ -1,0 +1,54 @@
+stages:
+  - analyze
+  # - test
+  - development
+  # - staging
+  # - deploy
+
+#############################################################################
+
+flutter-2.5.3-analyze:
+  stage: analyze
+  image: pllee4/ubuntu-ci:flutter-2.5.3
+  before_script:
+    - flutter pub get
+  script:
+    - flutter format --set-exit-if-changed .
+    - flutter analyze .
+
+# flutter-2.5.3-test:
+#   stage: development
+#   image: pllee4/ubuntu-ci:flutter-2.5.3
+#   before_script:
+#     - flutter pub get
+#   script:
+#     - flutter test
+
+flutter-2.5.3-development:
+  stage: development
+  image: pllee4/ubuntu-ci:flutter-2.5.3
+  before_script:
+    - flutter pub get
+  script:
+    - flutter config --enable-web && flutter build web
+
+# flutter-2.5.3-staging:
+#   stage: staging
+#   image: pllee4/ubuntu-ci:flutter-2.5.3
+#   before_script:
+#     - flutter pub get
+#   script:
+#     - flutter config --enable-web && flutter build web
+
+# flutter-2.5.3-deploy:
+#   stage: deploy
+#   image: pllee4/ubuntu-ci:flutter-2.5.3
+#   before_script:
+#     - flutter pub get
+#   script:
+#     - flutter build apk
+#   artifacts:
+#     paths:
+#       - build/app/outputs/apk/release/app-release.apk
+#   dependencies:
+#     - flutter-2.5.3-staging
