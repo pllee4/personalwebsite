@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personalwebsite/pages/about.dart';
+import 'package:personalwebsite/pages/achievement.dart';
 import 'package:personalwebsite/pages/home.dart';
 import 'package:personalwebsite/pages/splash_screen.dart';
 // import 'package:personalwebsite/pages/technical_notes.dart';
@@ -63,7 +64,7 @@ class CustomPage extends StatelessWidget {
       case "Projects":
         return [Text("Projects")];
       case "Achievements":
-        return [Text("Achievements")];
+        return [Achievement()];
       default:
         return [Text("Page not found")];
     }
