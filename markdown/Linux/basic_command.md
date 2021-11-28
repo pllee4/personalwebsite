@@ -117,3 +117,9 @@ $ sudo apt install nmap
 ```
 $ sudo nmap -sn <ip_address>/24 // for example 192.168.10.0/24
 ```
+
+## Add user to dialout
+
+```
+$ sudo usermod -a -G dialout $USER
+```
