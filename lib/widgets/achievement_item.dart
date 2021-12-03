@@ -30,9 +30,19 @@ class AchievementItem extends StatelessWidget {
           child: Container(
               child: Column(children: [
             SizedBox(width: 0.0, height: 10),
-            CircleAvatar(
-                radius: ResponsiveWidget.isLargeScreen(context) ? 20 : 10,
-                backgroundColor: Colors.teal[400])
+            Row(
+              children: [
+                SizedBox(
+                    width:
+                        ResponsiveWidget.isLargeScreen(context) ? 100.0 : 20.0,
+                    height: 0.0),
+                Icon(
+                  Icons.label_important,
+                  color: Colors.teal[400],
+                  size: ResponsiveWidget.isLargeScreen(context) ? 50 : 30,
+                ),
+              ],
+            )
           ]))),
       Expanded(
           flex: 8,
