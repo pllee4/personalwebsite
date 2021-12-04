@@ -33,8 +33,9 @@ class AchievementItem extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                    width:
-                        ResponsiveWidget.isLargeScreen(context) ? 100.0 : 20.0,
+                    width: ResponsiveWidget.isLargeScreen(context)
+                        ? MediaQuery.of(context).size.width * 0.06
+                        : 5.0,
                     height: 0.0),
                 Icon(
                   Icons.label_important,
