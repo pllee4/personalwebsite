@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:personalwebsite/widgets/about_details.dart';
 import 'package:personalwebsite/widgets/responsive_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -152,36 +153,15 @@ class About extends StatelessWidget {
                           style: TextStyle(
                               fontFamily: 'Montserrat', fontSize: 30)),
                     ),
-                  )
+                  ),
+                  const SizedBox(width: 20.0, height: 40.0),
+                  ResponsiveWidget.isLargeScreen(context)
+                      ? SizedBox(width: 0, height: 0)
+                      : Center(child: AboutDetails()),
                 ]),
           ),
           ResponsiveWidget.isLargeScreen(context)
-              ? Expanded(
-                  flex: 5,
-                  child: Column(children: [
-                    Row(
-                      children: <Widget>[
-                        Text("I'm ",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 35.0)),
-                        Text("Lee Pin Loon",
-                            style: TextStyle(
-                                color: Colors.teal[600], fontSize: 60.0)),
-                      ],
-                    ),
-                    const SizedBox(height: 50.0, width: 0.0),
-                    Row(children: <Widget>[
-                      Text("5",
-                          style: TextStyle(
-                              color: Colors.teal[600], fontSize: 65.0)),
-                      Text("++ Years of Experience in ",
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 35.0)),
-                      Text("Robotics",
-                          style: TextStyle(
-                              color: Colors.teal[600], fontSize: 35.0)),
-                    ]),
-                  ]))
+              ? Expanded(flex: 5, child: AboutDetails())
               : SizedBox(width: 0, height: 0),
         ]));
   }
