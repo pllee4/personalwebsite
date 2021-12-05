@@ -15,7 +15,6 @@ class AboutDetails extends StatelessWidget {
     'ROS 2',
   ];
   final List<String> toolList = [
-    'Docker',
     'Docker-compose',
     'CMake',
     'Conan',
@@ -111,6 +110,7 @@ class AboutDetails extends StatelessWidget {
             SizedBox(height: 20.0, width: 0.0),
             AboutDetailsCard(
                 title: "Tools", iconData: Icons.build, detailsList: toolList),
+            SizedBox(height: 20.0, width: 0.0),
           ]
         ]));
   }
