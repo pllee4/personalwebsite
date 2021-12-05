@@ -19,10 +19,10 @@ For development [preview](https://pinloon-lee--development-hkmpnttw.web.app/)
 
 ### Pages
 - [x] Home page
-- [ ] About page
+- [X] About page
 - [ ] Technical notes page
 - [ ] Project page
-- [ ] Achievement page
+- [X] Achievement page
   
 ## References
 
