@@ -39,24 +39,24 @@ class _NavBarState extends State<NavBar> {
                         });
                       },
                       itemPressed: _itemPressed),
-                  NavBarItem(
-                      name: "Technical Notes",
-                      onPressed: (String itemPressed) {
-                        setState(() {
-                          _itemPressed = itemPressed;
-                          Navigator.pushNamed(context, '/Technical Notes');
-                        });
-                      },
-                      itemPressed: _itemPressed),
-                  NavBarItem(
-                      name: "Projects",
-                      onPressed: (String itemPressed) {
-                        setState(() {
-                          _itemPressed = itemPressed;
-                          Navigator.pushNamed(context, '/Projects');
-                        });
-                      },
-                      itemPressed: _itemPressed),
+                  // NavBarItem(
+                  //     name: "Technical Notes",
+                  //     onPressed: (String itemPressed) {
+                  //       setState(() {
+                  //         _itemPressed = itemPressed;
+                  //         Navigator.pushNamed(context, '/Technical Notes');
+                  //       });
+                  //     },
+                  //     itemPressed: _itemPressed),
+                  // NavBarItem(
+                  //     name: "Projects",
+                  //     onPressed: (String itemPressed) {
+                  //       setState(() {
+                  //         _itemPressed = itemPressed;
+                  //         Navigator.pushNamed(context, '/Projects');
+                  //       });
+                  //     },
+                  //     itemPressed: _itemPressed),
                   NavBarItem(
                       name: "Achievements",
                       onPressed: (String itemPressed) {
@@ -101,25 +101,25 @@ class _NavBarState extends State<NavBar> {
                                 });
                               },
                               itemPressed: _itemPressed),
-                          NavBarItem(
-                              name: "Technical Notes",
-                              onPressed: (String itemPressed) {
-                                setState(() {
-                                  _itemPressed = itemPressed;
-                                  Navigator.pushNamed(
-                                      context, '/Technical Notes');
-                                });
-                              },
-                              itemPressed: _itemPressed),
-                          NavBarItem(
-                              name: "Projects",
-                              onPressed: (String itemPressed) {
-                                setState(() {
-                                  _itemPressed = itemPressed;
-                                  Navigator.pushNamed(context, '/Projects');
-                                });
-                              },
-                              itemPressed: _itemPressed),
+                          // NavBarItem(
+                          //     name: "Technical Notes",
+                          //     onPressed: (String itemPressed) {
+                          //       setState(() {
+                          //         _itemPressed = itemPressed;
+                          //         Navigator.pushNamed(
+                          //             context, '/Technical Notes');
+                          //       });
+                          //     },
+                          //     itemPressed: _itemPressed),
+                          // NavBarItem(
+                          //     name: "Projects",
+                          //     onPressed: (String itemPressed) {
+                          //       setState(() {
+                          //         _itemPressed = itemPressed;
+                          //         Navigator.pushNamed(context, '/Projects');
+                          //       });
+                          //     },
+                          //     itemPressed: _itemPressed),
                           NavBarItem(
                               name: "Achievements",
                               onPressed: (String itemPressed) {
