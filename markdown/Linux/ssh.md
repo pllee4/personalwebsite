@@ -1,6 +1,6 @@
 # SSH
 
-- sometimes it is very convenient to transfer files through local network.
+- Sometimes it is very convenient to transfer files through local network.
 - This could be done by rsync, scp, sftp.
 - Nevertheless the host must have openssh-server installed.
 
