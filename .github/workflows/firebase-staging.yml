@@ -23,6 +23,7 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PINLOON_LEE }}"
+          expires: 30d
           channelId: staging
           projectId: pinloon-lee
         env:
