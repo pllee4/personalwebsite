@@ -3,9 +3,8 @@
 
 name: Staging
 "on":
-  push:
-    branches:
-      - devel
+  schedule:
+    - cron: '0 12 * * SAT'
 
 jobs:
   build_and_preview:
@@ -23,6 +22,7 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PINLOON_LEE }}"
+          expires: 30d
           channelId: staging
           projectId: pinloon-lee
         env:
