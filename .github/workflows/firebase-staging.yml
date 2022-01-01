@@ -3,9 +3,8 @@
 
 name: Staging
 "on":
-  push:
-    branches:
-      - devel
+  schedule:
+    - cron: '0 12 * * SAT'
 
 jobs:
   build_and_preview:
