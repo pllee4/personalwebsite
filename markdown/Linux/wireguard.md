@@ -3,7 +3,7 @@
 ## Installation on server
 
 ```
-$ sudo apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
+$ sudo apt-get install wireguard-dkms wireguard-tools
 ```
 
 ```
@@ -50,7 +50,7 @@ AllowedIPs = 10.1.0.2/32
 IN_IFACE="eth0"                  # NIC connected to the internet
 WG_IFACE="wg0"                   # WG NIC
 SUB_NET="10.1.0.0/24"            # WG IPv4 sub/net aka CIDR
-WG_PORT="51800"                  # WG udp port
+WG_PORT="51820"                  # WG udp port
 
 # handle argument
 ARG=$1
