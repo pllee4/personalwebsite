@@ -99,9 +99,16 @@ exit 0
 - Install unbound to provide DNS
 
 ```
-$ sudo apt-get install unbound unbound-host dnsutils
+$ apt-get install unbound unbound-host dnsutils
 ```
 
+- check number of threads by running 
+  
+```
+lscpu | egrep 'Model name|Socket|Thread|NUMA|CPU\(s\)'
+```
+- You will need to fill in num-threads in the next configuration
+  
 ```
 $ curl -o /var/lib/unbound/root.hints https://www.internic.net/domain/named.cache
 $ chown -R unbound:unbound /var/lib/unbound
@@ -112,7 +119,7 @@ $ nano unbound_srv.conf
 ```
 server:
 
-  num-threads: 4
+  num-threads: 1
 
   #Enable logs
   verbosity: 1
@@ -173,8 +180,15 @@ $ systemctl enable unbound
 $ netstat -lutnp
 
 % disable systemd-resolved
-$ sudo systemctl stop systemd-resolved
-$ sudo systemctl disable systemd-resolved
+$ systemctl stop systemd-resolved.service
+$ systemctl disable systemd-resolved.service
+```
+
+## Wireguard service on server
+
+```
+$ wg-quick up wg0
+$ systemctl enable wg-quick@wg0.service
 ```
 
 - You can test your DNS setup with the following commands and you should expect to see similar results returned
@@ -190,13 +204,6 @@ Name:	www.google.com
 Address: 74.125.24.103
 ```
 
-## Wireguard service on server
-
-```
-$ sudo wg-quick up wg0
-$ sudo systemctl enable wg-quick@wg0.service
-```
-
 ## Setting up clients
 ### Server
 ```
@@ -204,6 +211,9 @@ $ wg genkey | tee client_private.key | wg pubkey > client_public.key
 ```
 ```
 $ wg set wg0 peer <new_client_public_key> allowed-ips <new_client_vpn_IP>/32
+```
+```
+$ wg addconf wg0 <(wg-quick strip wg0)
 ```
 
 ### Client
@@ -221,7 +231,6 @@ $ nano /etc/wireguard/wg0.conf
 ```
 
 ```
-Copy
 [Interface]
 Address = 10.1.0.2/32
 PrivateKey = <client_private_key>
