@@ -27,6 +27,15 @@ $ wg genkey | tee server_private_key | wg pubkey > server_public.key
 ## Configuration file for server
 
 - create /etc/wireguard/wg0.conf as following
+- for this example, the IP address of server used is 10.1.0.1
+- make sure the ip address is not having same subnet as the internet source of the server for example eth0.
+- DO NOT use IP 10.1.0.1 if you realize it is having same subnet as eth0 as shown below
+
+```
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.1.0.4  netmask 255.255.255.0  broadcast 10.1.0.255
+
+```
 
 ```
 [Interface]
@@ -215,6 +224,7 @@ $ wg set wg0 peer <new_client_public_key> allowed-ips <new_client_vpn_IP>/32
 ```
 $ wg addconf wg0 <(wg-quick strip wg0)
 ```
+- Set wg0 down then up again in order to take effect
 
 ### Client
 - Install dependencies
