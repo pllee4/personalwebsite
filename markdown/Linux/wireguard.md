@@ -52,6 +52,8 @@ AllowedIPs = 10.1.0.2/32
 ```
 
 - the ListenPort depends on the your UDP port allowed at firewall.
+- example of firewall at Azure
+  ![firewall](https://user-images.githubusercontent.com/42335542/148547297-0d7d7963-a187-4ff0-ac5a-313f8daeb37a.png)
 - create /etc/wireguard/iptable/rules.sh.
 
 ```
