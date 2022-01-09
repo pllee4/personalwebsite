@@ -27,19 +27,19 @@ $ wg genkey | tee server_private_key | wg pubkey > server_public.key
 ## Configuration file for server
 
 - create /etc/wireguard/wg0.conf as following
-- for this example, the IP address of server used is 10.1.0.1
+- for this example, the IP address of server used is 100.0.0.1
 - make sure the ip address is not having same subnet as the internet source of the server for example eth0.
-- DO NOT use IP 10.1.0.1 if you realize it is having same subnet as eth0 as shown below
+- DO NOT use IP 100.0.0.1 if you realize it is having same subnet as eth0 as shown below
 
 ```
 eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 10.1.0.4  netmask 255.255.255.0  broadcast 10.1.0.255
+        inet 100.0.0.4  netmask 255.255.255.0  broadcast 100.0.0.255
 
 ```
 
 ```
 [Interface]
-Address = 10.1.0.1/24
+Address = 100.0.0.1/24
 SaveConfig = true
 PostUp = /etc/wireguard/iptable/rules.sh A
 PostDown = /etc/wireguard/iptable/rules.sh D
@@ -48,7 +48,7 @@ PrivateKey = <server_private_key>
 
 [Peer]
 PublicKey = <client_public_key>
-AllowedIPs = 10.1.0.2/32
+AllowedIPs = 100.0.0.2/32
 ```
 
 - the ListenPort depends on the your UDP port allowed at firewall.
@@ -60,7 +60,7 @@ AllowedIPs = 10.1.0.2/32
 #!/bin/bash
 IN_IFACE="eth0"                  # NIC connected to the internet
 WG_IFACE="wg0"                   # WG NIC
-SUB_NET="10.1.0.0/24"            # WG IPv4 sub/net aka CIDR
+SUB_NET="100.0.0.0/24"            # WG IPv4 sub/net aka CIDR
 WG_PORT="51820"                  # WG udp port
 
 # handle argument
@@ -148,10 +148,10 @@ server:
   #Authorized IPs to access the DNS Server
   access-control: 0.0.0.0/0                 refuse
   access-control: 127.0.0.1                 allow
-  access-control: 10.1.0.0/24               allow
+  access-control: 100.0.0.0/24               allow
 
   #not allowed to be returned for public internet  names
-  private-address: 10.1.0.0/24
+  private-address: 100.0.0.0/24
 
   # Hide DNS Server info
   hide-identity: yes
@@ -193,6 +193,13 @@ $ netstat -lutnp
 % disable systemd-resolved
 $ systemctl stop systemd-resolved.service
 $ systemctl disable systemd-resolved.service
+
+% fix hostname
+% if you have seen error like "unable to resolve host <your_hostname>: Name or service not known"
+$ nano /etc/hosts
+
+% add your hostname
+127.0.0.1 <your_hostname>
 ```
 
 ## Wireguard service on server
@@ -205,10 +212,10 @@ $ systemctl enable wg-quick@wg0.service
 - You can test your DNS setup with the following commands and you should expect to see similar results returned
 
 ```
-$ nslookup www.google.com 10.1.0.1
+$ nslookup www.google.com 100.0.0.1
 
-Server:		10.1.0.1
-Address:	10.1.0.1#53
+Server:		100.0.0.1
+Address:	100.0.0.1#53
 
 Non-authoritative answer:
 Name:	www.google.com
@@ -234,7 +241,7 @@ $ wg addconf wg0 <(wg-quick strip wg0)
 $ sudo apt install wireguard resolvconf
 
 ```
-- Assuming the client vpn IP is 10.1.0.2
+- Assuming the client vpn IP is 100.0.0.2
 - Create configuration file as below
 
 ```
@@ -244,9 +251,9 @@ $ nano /etc/wireguard/wg0.conf
 
 ```
 [Interface]
-Address = 10.1.0.2/32
+Address = 100.0.0.2/32
 PrivateKey = <client_private_key>
-DNS = 10.1.0.1
+DNS = 100.0.0.1
 
 [Peer]
 PublicKey = <server_public_key>
