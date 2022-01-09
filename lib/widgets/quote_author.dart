@@ -23,9 +23,10 @@ class QuoteAuthor extends StatefulWidget {
 class _QuoteAuthorState extends State<QuoteAuthor> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return ListView(children: [
       SizedBox(height: 10),
       Text(widget.quote,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Benne',
             fontSize: widget.fontSize,
@@ -33,6 +34,7 @@ class _QuoteAuthorState extends State<QuoteAuthor> {
           )),
       SizedBox(height: 30),
       Text(widget.author,
+          textAlign: TextAlign.center,
           style: TextStyle(
             backgroundColor: widget.backgroundColor,
             fontFamily: 'Benne',

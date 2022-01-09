@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'pages/custom_page.dart';
 
@@ -35,8 +36,7 @@ Route<dynamic> _generateRoute(RouteSettings settings) {
           builder: (context) => CustomPage(pageName: "Achievements"));
     default:
       return CustomPageRoute(
-          routeName: "/Home",
-          builder: (context) => CustomPage(pageName: "Home"));
+          routeName: "/#", builder: (context) => CustomPage(pageName: "#"));
   }
 }
 
@@ -49,6 +49,23 @@ class CustomPageRoute extends MaterialPageRoute {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  void didChangeDependencies() async {
+    await rootBundle.load('images/dark-green.jpg');
+    await rootBundle.load('images/profile-clear.png');
+    await rootBundle.load('images/github-white.png');
+    await rootBundle.load('images/linkedin-white.png');
+    await rootBundle.load('images/book-white.png');
+    await rootBundle.load('images/email-white.png');
+    precacheImage(AssetImage("images/dark-green.jpg"), context);
+    precacheImage(AssetImage("images/profile-clear.png"), context);
+    precacheImage(AssetImage("images/github-white.png"), context);
+    precacheImage(AssetImage("images/linkedin-white.png"), context);
+    precacheImage(AssetImage("images/book-white.png"), context);
+    precacheImage(AssetImage("images/email-white.png"), context);
+    super.didChangeDependencies();
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -78,7 +95,7 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
       onGenerateRoute: _generateRoute,
-      initialRoute: '/Home',
+      initialRoute: '/#',
       onGenerateInitialRoutes: (initialRoute) =>
           [_generateRoute(RouteSettings(name: initialRoute))],
     );

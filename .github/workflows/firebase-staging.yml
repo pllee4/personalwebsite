@@ -3,9 +3,8 @@
 
 name: Staging
 "on":
-  push:
-    branches:
-      - devel
+  schedule:
+    - cron: '0 12 * * SAT'
 
 jobs:
   build_and_preview:
@@ -17,11 +16,13 @@ jobs:
         with:
           channel: "stable" # 'dev', 'alpha', default to: 'stable'
       - run: flutter pub get
+      - run: flutter analyze .
       - run: flutter config --enable-web && flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PINLOON_LEE }}"
+          expires: 30d
           channelId: staging
           projectId: pinloon-lee
         env:

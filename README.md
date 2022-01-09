@@ -6,11 +6,23 @@
 
 A Flutter project hosted on [here](https://pinloon-lee.web.app/)
 
-For latest [preview](https://pinloon-lee--staging-m94rjpji.web.app/)
+For staging [preview](https://pinloon-lee--staging-1uurjxqy.web.app/)
 
-## Notes
-- currently the support for different screen size is not yet done
-- the site can only be viewed properly under resolution of 1920x1080 for desktop for now
+For development [preview](https://pinloon-lee--development-l0ez7sis.web.app/)
+
+## TODO list
+
+### Features
+- [x] Responsive screen
+- [x] Splash screen 
+- [ ] Single click download button
+
+### Pages
+- [x] Home page
+- [X] About page
+- [ ] Technical notes page
+- [ ] Project page
+- [X] Achievement page
   
 ## References
 
