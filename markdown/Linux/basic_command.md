@@ -123,3 +123,17 @@ $ sudo nmap -sn <ip_address>/24 // for example 192.168.10.0/24
 ```
 $ sudo usermod -a -G dialout $USER
 ```
+
+## Change attribute of file
+
+### List attributes
+```
+$ lsattr <directory> -la
+```
+
+### Add / delete attribute of file
+
+```
+$ sudo chattr +i <directory>
+$ sudo chattr -i <directory>
+```
