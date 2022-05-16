@@ -87,13 +87,13 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
         child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Expanded(
           child: Scrollbar(
-              isAlwaysShown: true,
+              thumbVisibility: true,
               controller: _scrollControllerTitle,
               child: SingleChildScrollView(child: sidebar))),
       Expanded(
           flex: 5,
           child: Scrollbar(
-              isAlwaysShown: true,
+              thumbVisibility: true,
               controller: _scrollControllerContent,
               child: SingleChildScrollView(
                   child: Column(children: <Widget>[
