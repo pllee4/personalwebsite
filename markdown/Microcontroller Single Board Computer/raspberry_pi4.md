@@ -28,6 +28,19 @@ $ sudo apt-get clean
 $ sudo apt-get autoremove -y
 ```
 
+## Zram
+
+```
+$ sudo wget -O /usr/bin/zram.sh https://raw.githubusercontent.com/novaspirit/rpi_zram/master/zram.sh
+$ sudo chmod +x /usr/bin/zram.sh
+$ sudo nano /etc/rc.local
+```
+-Find exit 0 line, and in the line above add
+```
+/usr/bin/zram.sh &
+```
+followed by a reboot
+
 ## Enable I2C
 
 - go to /boot/config.txt and change to the following:
@@ -53,6 +66,13 @@ $ sudo apt-get install -y i2c-tools
 $ sudo i2cdetect -y 1
 ```
 
+## Enable SPI
+- To enable SPI for [CAN hat](https://www.waveshare.com/rs485-can-hat.htm), - go to /boot/config.txt and change to the following:
+
+```
+dtparam=spi=on
+dtoverlay=mcp2515-can0,oscillator=12000000,interrupt=25,spimaxfrequency=2000000`
+```
 ## Enable UART1
 
 - To enable UART, go to /boot/cmdline.txt and removed the line "console=serial0,115200"
