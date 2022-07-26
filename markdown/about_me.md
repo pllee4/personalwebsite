@@ -3,6 +3,7 @@
 
 - [LinkedIn](http://www.linkedin.com/in/pinloonlee)
 - [Github](https://github.com/pllee4)
+- [Medium](https://medium.com/@pinloon)
 - [Website](https://pinloon-lee.web.app/)  
 ## Achievements
 
