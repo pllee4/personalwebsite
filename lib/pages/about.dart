@@ -123,6 +123,15 @@ class About extends StatelessWidget {
                           )),
                           Expanded(
                               child: IconButton(
+                            icon: Image.asset('images/medium.png'),
+                            iconSize: 50,
+                            tooltip: "Medium",
+                            onPressed: () {
+                              launchURL('https://medium.com/@pinloon');
+                            },
+                          )),
+                          Expanded(
+                              child: IconButton(
                             icon: Image.asset('images/book-white.png'),
                             iconSize: 50,
                             tooltip: "Gitbook",
