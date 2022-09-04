@@ -36,7 +36,7 @@ class AnimatedText extends StatelessWidget {
 }
 
 final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
-  primary: Colors.white,
+  foregroundColor: Colors.white,
   minimumSize: Size(88, 36),
   padding: EdgeInsets.symmetric(horizontal: 16),
   shape: const RoundedRectangleBorder(

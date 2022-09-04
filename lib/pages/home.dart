@@ -21,8 +21,8 @@ class Home extends StatelessWidget {
   }
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.white,
-    primary: Colors.teal[900],
+    foregroundColor: Colors.white,
+    backgroundColor: Colors.teal[900],
     minimumSize: Size(140, 70),
     padding: EdgeInsets.symmetric(horizontal: 16),
     shape: const RoundedRectangleBorder(
