@@ -65,3 +65,28 @@ $ candump can0,123:1fffffff
 $ candump can0,123:1ffffff0
 ```
 
+## CAN player
+
+- Log the CAN data
+
+```
+$ candump -L can0 > candata.log
+```
+
+- Play logged CAN data
+
+```
+$ canplayer -I candata.log
+```
+
+## CAN2UDP
+
+- On device with can0
+```
+$ can2udp -Dfvp 6000 can0 <target IP> 6001
+```
+
+- On device with vcan0
+```
+$ can2udp -Dfvp 6001 vcan0 <target IP> 6000
+```

@@ -36,7 +36,7 @@ class AnimatedText extends StatelessWidget {
 }
 
 final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
-  primary: Colors.white,
+  foregroundColor: Colors.white,
   minimumSize: Size(88, 36),
   padding: EdgeInsets.symmetric(horizontal: 16),
   shape: const RoundedRectangleBorder(
@@ -119,6 +119,15 @@ class About extends StatelessWidget {
                             onPressed: () {
                               launchURL(
                                   'http://www.linkedin.com/in/pinloonlee');
+                            },
+                          )),
+                          Expanded(
+                              child: IconButton(
+                            icon: Image.asset('images/medium.png'),
+                            iconSize: 50,
+                            tooltip: "Medium",
+                            onPressed: () {
+                              launchURL('https://medium.com/@pinloon');
                             },
                           )),
                           Expanded(
