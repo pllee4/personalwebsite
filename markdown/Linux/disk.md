@@ -3,8 +3,9 @@
 - The commands below are related to disk or boot up
 
 ## Fstab 
+- can be edited using command of `sudo nano /etc/fstab`
 
-- reference to mount other disk
+### Reference to mount other disk
   
 ```
 <file system> <mount point>   <type>  <options>       <dump>  <pass>
@@ -13,6 +14,20 @@
 ```
 UUID=467031ef-c93b-4fb2-a825-0157f3606d45 /mnt/nvme0n1p7 ext4 auto,user,rw 0 0
 /mnt/nvme0n1p7/pinloon/dev_ws /home/pinloon/dev_ws ext4 auto,user,rw 0 0
+```
+
+### Reference to mount Window's shared drive
+
+```
+//sg-drive/Shared_Drive /home/pinloon/mnt/win_shared_folder cifs credentials=/etc/win-credentials,auto,user,uid=1000,gid=1000,file_mode=0755,dir_mode=0755,rw 0 0
+```
+
+- The credential files of `/etc/win-credentials`
+
+```
+username=<your window's username> 
+password=<your window's password>
+domain=<your group's domain>
 ```
 
 ## Clone disk using dd
