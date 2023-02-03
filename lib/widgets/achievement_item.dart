@@ -99,6 +99,7 @@ class AchievementItem extends StatelessWidget {
     ]);
   }
 
-  void launchURL(url) async =>
-      await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+  void launchURL(url) async => await canLaunchUrl(url)
+      ? await launchUrl(url)
+      : throw 'Could not launch $url';
 }
