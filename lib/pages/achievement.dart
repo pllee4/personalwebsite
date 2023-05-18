@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personalwebsite/widgets/achievement_item.dart';
 
 class Achievement extends StatelessWidget {
-  const Achievement({Key key}) : super(key: key);
+  const Achievement({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,7 @@ import 'package:personalwebsite/widgets/responsive_widget.dart';
 
 class CustomPage extends StatelessWidget {
   final String pageName;
-  CustomPage({Key key, @required this.pageName}) : super(key: key);
+  CustomPage({Key? key, required this.pageName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

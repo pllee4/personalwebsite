@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class AnimatedProgressBar extends StatefulWidget {
   final double percentage;
   final String label;
-  AnimatedProgressBar(
-      {Key key, @required this.percentage, @required this.label})
+  AnimatedProgressBar({Key? key, required this.percentage, required this.label})
       : super(key: key);
 
   @override
@@ -13,8 +12,8 @@ class AnimatedProgressBar extends StatefulWidget {
 
 class _AnimatedProgressBarState extends State<AnimatedProgressBar>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation _animation;
+  late AnimationController _animationController;
+  late Animation _animation;
   @override
   void initState() {
     _animationController = AnimationController(

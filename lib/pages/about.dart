@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class AnimatedText extends StatelessWidget {
   const AnimatedText({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -47,22 +47,22 @@ final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
     (Set<MaterialState> states) {
       if (states.contains(MaterialState.pressed))
         return BorderSide(
-          color: Colors.teal[900],
+          color: Colors.teal[900]!,
           width: 2,
         );
       return BorderSide(
-          color: Colors.teal[900], width: 2); // Defer to the widget's default.
+          color: Colors.teal[900]!, width: 2); // Defer to the widget's default.
     },
   ),
   overlayColor:
       MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-    if (states.contains(MaterialState.hovered)) return Colors.teal[900];
+    if (states.contains(MaterialState.hovered)) return Colors.teal[900]!;
     return Colors.transparent; // Defer to the widget's default.
   }),
 );
 
 class About extends StatelessWidget {
-  const About({Key key}) : super(key: key);
+  const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

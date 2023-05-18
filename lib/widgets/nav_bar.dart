@@ -4,7 +4,7 @@ import 'package:personalwebsite/widgets/profile.dart';
 import 'package:personalwebsite/widgets/responsive_widget.dart';
 
 class NavBar extends StatefulWidget {
-  NavBar({Key key}) : super(key: key);
+  NavBar({Key? key}) : super(key: key);
 
   @override
   _NavBarState createState() => _NavBarState();

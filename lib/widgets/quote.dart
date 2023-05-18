@@ -1,4 +1,4 @@
-import 'package:catex/catex.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:flutter/material.dart';
 
 class Quote extends StatelessWidget {
@@ -7,8 +7,8 @@ class Quote extends StatelessWidget {
   final Color color;
 
   Quote(
-      {Key key,
-      @required this.quote,
+      {Key? key,
+      required this.quote,
       this.fontSize = 42,
       this.color = Colors.white})
       : super(key: key);
@@ -17,6 +17,6 @@ class Quote extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle.merge(
         style: TextStyle(fontSize: fontSize, color: color),
-        child: CaTeX(quote));
+        child: Math.tex(quote));
   }
 }

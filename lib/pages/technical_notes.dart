@@ -4,7 +4,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:personalwebsite/widgets/custom_expansion_tile.dart';
 
 class TechnicalNotes extends StatefulWidget {
-  TechnicalNotes({Key key}) : super(key: key);
+  TechnicalNotes({Key? key}) : super(key: key);
 
   @override
   _TechnicalNotesState createState() => _TechnicalNotesState();
@@ -12,8 +12,8 @@ class TechnicalNotes extends StatefulWidget {
 
 class _TechnicalNotesState extends State<TechnicalNotes> {
   // with SingleTickerProviderStateMixin {
-  ScrollController _scrollControllerTitle, _scrollControllerContent;
-  GlobalKey _sidebarKey;
+  late ScrollController _scrollControllerTitle, _scrollControllerContent;
+  late GlobalKey _sidebarKey;
   final List<Map<String, dynamic>> tabData = [
     {'title': 'Content'},
     {
@@ -98,7 +98,7 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
               child: SingleChildScrollView(
                   child: Column(children: <Widget>[
                 Container(
-                  color: Colors.blueGrey[900].withOpacity(0.6),
+                  color: Colors.blueGrey[900]!.withOpacity(0.6),
                   height: MediaQuery.of(context).size.height,
                   child: FutureBuilder(
                       future: rootBundle.loadString("markdown/" +
@@ -109,7 +109,7 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
                           AsyncSnapshot<String> snapshot) {
                         if (snapshot.hasData) {
                           return Markdown(
-                              data: snapshot.data,
+                              data: snapshot.requireData,
                               styleSheet: MarkdownStyleSheet(
                                   p: TextStyle(fontSize: 18),
                                   code: TextStyle(

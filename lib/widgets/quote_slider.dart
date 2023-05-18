@@ -4,7 +4,7 @@ import 'package:personalwebsite/widgets/quote.dart';
 import 'package:personalwebsite/widgets/quote_author.dart';
 
 class QuoteSlider extends StatefulWidget {
-  QuoteSlider({Key key}) : super(key: key);
+  QuoteSlider({Key? key}) : super(key: key);
 
   @override
   _QuoteSliderState createState() => _QuoteSliderState();
@@ -15,16 +15,17 @@ class _QuoteSliderState extends State<QuoteSlider> {
   List<Widget> quoteList = [
     ListView(children: [
       Center(child: Quote(quote: '1.02^{365} = 1377.4')),
+      Center(child: Divider()),
       Center(child: Quote(quote: '0.98^{365} = 0.0006'))
     ]),
     QuoteAuthor(
         quote: "Work hard in silence, let your success be your noise",
         author: "Frank Ocean",
-        backgroundColor: Colors.cyan[900]),
+        backgroundColor: Colors.cyan[900]!),
     QuoteAuthor(
         quote: "Growth and comfort do not coexist",
         author: "Ginni Rometty",
-        backgroundColor: Colors.green[800]),
+        backgroundColor: Colors.green[800]!),
   ];
 
   List<T> map<T>(List list, Function handler) {

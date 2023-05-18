@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class CustomExpansionTile extends StatefulWidget {
   final List<Map<String, dynamic>> tabs;
   final void Function(String) onTabChanged;
-  final List<int> activeTabIndices;
+  final List<int>? activeTabIndices;
 
   const CustomExpansionTile.fromJson({
-    Key key,
-    @required this.tabs,
-    this.onTabChanged,
+    Key? key,
+    required this.tabs,
+    required this.onTabChanged,
     this.activeTabIndices,
   }) : super(key: key);
 
@@ -18,7 +18,7 @@ class CustomExpansionTile extends StatefulWidget {
 }
 
 class _CustomExpansionTileState extends State<CustomExpansionTile> {
-  List<int> activeTabIndices;
+  List<int>? activeTabIndices;
 
   void initState() {
     super.initState();
@@ -26,11 +26,11 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
     Future.delayed(Duration.zero, () {
       if (activeTabIndices == null) {
         final newActiveTabData = _getFirstTabIndex(widget.tabs, []);
-        List<int> newActiveTabIndices = newActiveTabData[0];
-        String tabId = newActiveTabData[1];
+        List<int> newActiveTabIndices = newActiveTabData[0] as List<int>;
+        String tabId = newActiveTabData[1].toString();
         if (newActiveTabIndices.length > 0) {
           setActiveTabIndices(newActiveTabIndices);
-          if (widget.onTabChanged != null) widget.onTabChanged(tabId);
+          widget.onTabChanged(tabId);
         }
       }
     });
@@ -38,7 +38,7 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
 
   List<Object> _getFirstTabIndex(
       List<Map<String, dynamic>> tabs, List<int> indices) {
-    String tabId;
+    String? tabId;
     if (tabs.length > 0) {
       Map<String, dynamic> firstTab = tabs[0];
       tabId = firstTab['id'] ?? firstTab['title'];
@@ -46,11 +46,11 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
 
       if (firstTab['children'] != null) {
         final tabData = _getFirstTabIndex(firstTab['children'], indices);
-        indices = tabData[0];
-        tabId = tabData[1];
+        indices = tabData[0] as List<int>;
+        tabId = tabData[1].toString();
       }
     }
-    return [indices, tabId];
+    return [indices, tabId!.toString()];
   }
 
   void setActiveTabIndices(List<int> newIndices) {
@@ -71,7 +71,7 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
                   itemBuilder: (BuildContext context, int index) => SidebarItem(
                     widget.tabs[index],
                     widget.onTabChanged,
-                    activeTabIndices,
+                    activeTabIndices as List<int>,
                     setActiveTabIndices,
                     index: index,
                   ),
@@ -85,8 +85,8 @@ class SidebarItem extends StatelessWidget {
   final void Function(String) onTabChanged;
   final List<int> activeTabIndices;
   final void Function(List<int> newIndices) setActiveTabIndices;
-  final int index;
-  final List<int> indices;
+  final int? index;
+  final List<int>? indices;
 
   const SidebarItem(
     this.data,
@@ -109,23 +109,22 @@ class SidebarItem extends StatelessWidget {
   }
 
   Widget _buildTiles(Map<String, dynamic> root, BuildContext context) {
-    final _indices = indices ?? [index];
+    final _indices = indices;
     if (root['children'] == null)
       return ListTile(
-        selected: activeTabIndices != null &&
-            _indicesMatch(_indices, activeTabIndices),
+        selected: _indicesMatch(_indices as List<int>, activeTabIndices),
         title: Text(root['title'],
             style: TextStyle(color: Colors.white, fontSize: 18)),
         onTap: () {
           setActiveTabIndices(_indices);
-          if (onTabChanged != null) onTabChanged(root['id'] ?? root['title']);
+          onTabChanged(root['id'] ?? root['title']);
         },
       );
 
     List<Widget> children = [];
     for (int i = 0; i < root['children'].length; i++) {
       Map<String, dynamic> item = root['children'][i];
-      final itemIndices = [..._indices, i];
+      final itemIndices = [...?indices, i];
       children.add(
         SidebarItem(
           item,
