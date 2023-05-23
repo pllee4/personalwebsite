@@ -122,10 +122,10 @@ class AboutDetailsCard extends StatelessWidget {
   final List<String> detailsList;
 
   AboutDetailsCard(
-      {Key key,
-      @required this.title,
-      @required this.iconData,
-      @required this.detailsList})
+      {Key? key,
+      required this.title,
+      required this.iconData,
+      required this.detailsList})
       : super(key: key);
 
   @override

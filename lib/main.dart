@@ -42,7 +42,7 @@ Route<dynamic> _generateRoute(RouteSettings settings) {
 
 class CustomPageRoute extends MaterialPageRoute {
   final String routeName;
-  CustomPageRoute({Key key, @required this.routeName, builder})
+  CustomPageRoute({Key? key, required this.routeName, builder})
       : super(builder: builder, settings: RouteSettings(name: routeName));
   @override
   Duration get transitionDuration => const Duration(milliseconds: 0);

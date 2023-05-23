@@ -5,8 +5,8 @@ class GlowingText extends StatefulWidget {
   final Color color;
   final double fontSize;
   GlowingText(
-      {Key key,
-      @required this.text,
+      {Key? key,
+      required this.text,
       this.color = Colors.white,
       this.fontSize = 42})
       : super(key: key);
@@ -17,8 +17,8 @@ class GlowingText extends StatefulWidget {
 
 class _GlowingTextState extends State<GlowingText>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation _animation;
+  late AnimationController _animationController;
+  late Animation _animation;
   @override
   void initState() {
     _animationController =

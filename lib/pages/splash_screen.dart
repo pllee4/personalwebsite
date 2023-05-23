@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personalwebsite/widgets/animated_progress_bar.dart';
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({Key key}) : super(key: key);
+  SplashScreen({Key? key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();

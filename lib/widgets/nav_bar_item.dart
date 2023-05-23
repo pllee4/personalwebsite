@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 class NavBarItem extends StatefulWidget {
   final String name;
   final Function(String) onPressed;
-  final String itemPressed;
+  final String? itemPressed;
   NavBarItem(
-      {Key key,
-      @required this.name,
-      @required this.onPressed,
-      this.itemPressed})
+      {Key? key, required this.name, required this.onPressed, this.itemPressed})
       : super(key: key);
 
   @override

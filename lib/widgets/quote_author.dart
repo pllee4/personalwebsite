@@ -8,9 +8,9 @@ class QuoteAuthor extends StatefulWidget {
   final Color color;
 
   QuoteAuthor(
-      {Key key,
-      @required this.quote,
-      @required this.author,
+      {Key? key,
+      required this.quote,
+      required this.author,
       this.backgroundColor = Colors.blueGrey,
       this.fontSize = 42,
       this.color = Colors.white})

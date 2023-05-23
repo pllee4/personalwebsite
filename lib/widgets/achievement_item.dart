@@ -8,15 +8,15 @@ class AchievementItem extends StatelessWidget {
   final String award;
   final String subtitle1;
 
-  final String subtitle2;
-  final String url;
-  final IconData iconData;
+  final String? subtitle2;
+  final String? url;
+  final IconData? iconData;
 
   AchievementItem({
-    Key key,
-    @required this.title,
-    @required this.award,
-    @required this.subtitle1,
+    Key? key,
+    required this.title,
+    required this.award,
+    required this.subtitle1,
     this.subtitle2,
     this.url,
     this.iconData,
@@ -89,7 +89,7 @@ class AchievementItem extends StatelessWidget {
                     if (subtitle2 != null) SizedBox(height: 15.0),
                     if (subtitle2 != null)
                       Text(
-                        subtitle2,
+                        subtitle2 as String,
                         style: TextStyle(color: Colors.grey[350]),
                       ),
                   ]))
