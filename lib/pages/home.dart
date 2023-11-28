@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
               Navigator.pushNamed(context, '/About');
             },
             child: Text('EXPLORE NOW',
-                style: TextStyle(fontFamily: 'Montserrat', fontSize: 30))),
+                style: TextStyle(fontFamily: 'Montserrat', fontSize: 28))),
       ]),
     );
   }

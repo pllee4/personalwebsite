@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'pages/custom_page.dart';
 
 void main() {
@@ -72,9 +72,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Pin Loon Lee',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.white,
-        dialogBackgroundColor: Colors.transparent,
+      theme: FlexThemeData.light(
+        scheme: FlexScheme.bigStone,
         textTheme: TextTheme(
             displayLarge: TextStyle(color: Colors.white70, fontSize: 20),
             displayMedium: TextStyle(color: Colors.white70, fontSize: 20),
@@ -82,18 +81,17 @@ class _MyAppState extends State<MyApp> {
             headlineMedium: TextStyle(color: Colors.white, fontSize: 20),
             headlineSmall: TextStyle(color: Colors.white, fontSize: 20),
             titleLarge: TextStyle(color: Colors.white70, fontSize: 18),
-            titleMedium: TextStyle(color: Colors.white, fontSize: 18),
+            titleMedium: TextStyle(color: Colors.white, fontSize: 16),
             titleSmall: TextStyle(color: Colors.white, fontSize: 18),
             bodyLarge: TextStyle(color: Colors.white, fontSize: 18),
-            bodyMedium: TextStyle(color: Colors.white, fontSize: 18),
+            bodyMedium: TextStyle(color: Colors.white, fontSize: 16),
             labelLarge: TextStyle(
                 color: Colors.blueGrey[200],
                 decorationColor: Colors.blueGrey[50]),
             bodySmall: TextStyle(color: Colors.white, fontSize: 18),
             labelSmall: TextStyle(color: Colors.white, fontSize: 18)),
-        colorScheme: const ColorScheme.light(),
       ),
-      darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.bigStone),
       onGenerateRoute: _generateRoute,
       initialRoute: '/#',
       onGenerateInitialRoutes: (initialRoute) =>

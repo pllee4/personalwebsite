@@ -14,6 +14,7 @@ class CustomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey[900],
         appBar: ResponsiveWidget.isLargeScreen(context)
             ? null
             : AppBar(
@@ -28,6 +29,8 @@ class CustomPage extends StatelessWidget {
                 ),
               ),
         drawer: Drawer(
+          backgroundColor: Colors.grey[900],
+          width: MediaQuery.of(context).size.width * 0.55,
           child: NavBar(),
         ),
         body: SizedBox.expand(
