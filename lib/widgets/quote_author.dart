@@ -12,7 +12,7 @@ class QuoteAuthor extends StatefulWidget {
       required this.quote,
       required this.author,
       this.backgroundColor = Colors.blueGrey,
-      this.fontSize = 42,
+      this.fontSize = 38,
       this.color = Colors.white})
       : super(key: key);
 
