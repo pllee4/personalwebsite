@@ -68,13 +68,15 @@ class AchievementItem extends StatelessWidget {
                         style: TextStyle(color: Colors.tealAccent[700]),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () async {
-                            if (this.url != null) launchURL(this.url);
+                            if (this.url != null)
+                              launchURL(Uri.parse(this.url.toString()));
                           }),
                   ),
                   IconButton(
                     icon: Icon(iconData, color: Colors.teal[400]),
                     onPressed: () {
-                      if (this.url != null) launchURL(this.url);
+                      if (this.url != null)
+                        launchURL(Uri.parse(this.url.toString()));
                     },
                   )
                 ])),

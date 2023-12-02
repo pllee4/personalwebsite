@@ -108,7 +108,7 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Github",
                             onPressed: () {
-                              launchURL('https://github.com/pllee4');
+                              launchURL(Uri.parse('https://github.com/pllee4'));
                             },
                           )),
                           Expanded(
@@ -117,8 +117,8 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Linkedin",
                             onPressed: () {
-                              launchURL(
-                                  'http://www.linkedin.com/in/pinloonlee');
+                              launchURL(Uri.parse(
+                                  'http://www.linkedin.com/in/pinloonlee'));
                             },
                           )),
                           Expanded(
@@ -127,7 +127,8 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Medium",
                             onPressed: () {
-                              launchURL('https://medium.com/@pinloon');
+                              launchURL(
+                                  Uri.parse('https://medium.com/@pinloon'));
                             },
                           )),
                           Expanded(
@@ -136,7 +137,8 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Gitbook",
                             onPressed: () {
-                              launchURL('https://pinloon.gitbook.io');
+                              launchURL(
+                                  Uri.parse('https://pinloon.gitbook.io'));
                             },
                           )),
                           Expanded(
@@ -145,7 +147,8 @@ class About extends StatelessWidget {
                             iconSize: 50,
                             tooltip: "Email",
                             onPressed: () {
-                              launchURL('mailto:pinloon_0428@hotmail.com');
+                              launchURL(
+                                  Uri.parse('mailto:pinloon_0428@hotmail.com'));
                             },
                           )),
                         ],
@@ -155,8 +158,8 @@ class About extends StatelessWidget {
                     child: OutlinedButton(
                       style: outlineButtonStyle,
                       onPressed: () {
-                        launchURL(
-                            'https://drive.google.com/file/d/1HvqbzHis658uvnWg77-bdHW3RR4RwAPd/view?usp=sharing');
+                        launchURL(Uri.parse(
+                            'https://drive.google.com/file/d/1HvqbzHis658uvnWg77-bdHW3RR4RwAPd/view?usp=sharing'));
                       },
                       child: Text('Resume',
                           style: TextStyle(
