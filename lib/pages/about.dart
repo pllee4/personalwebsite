@@ -43,9 +43,9 @@ final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
     borderRadius: BorderRadius.all(Radius.circular(10)),
   ),
 ).copyWith(
-  side: MaterialStateProperty.resolveWith<BorderSide>(
-    (Set<MaterialState> states) {
-      if (states.contains(MaterialState.pressed))
+  side: WidgetStateProperty.resolveWith<BorderSide>(
+    (Set<WidgetState> states) {
+      if (states.contains(WidgetState.pressed))
         return BorderSide(
           color: Colors.teal[900]!,
           width: 2,
@@ -55,8 +55,8 @@ final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
     },
   ),
   overlayColor:
-      MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-    if (states.contains(MaterialState.hovered)) return Colors.teal[900]!;
+      WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+    if (states.contains(WidgetState.hovered)) return Colors.teal[900]!;
     return Colors.transparent; // Defer to the widget's default.
   }),
 );
