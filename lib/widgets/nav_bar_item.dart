@@ -36,11 +36,11 @@ class _NavBarItemState extends State<NavBarItem> {
         child: Column(children: [
           ElevatedButton(
               style: ButtonStyle(
-                elevation: MaterialStateProperty.all<double>(0.0),
+                elevation: WidgetStateProperty.all<double>(0.0),
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    WidgetStateProperty.all<Color>(Colors.transparent),
                 overlayColor:
-                    MaterialStateProperty.all<Color>(Colors.transparent),
+                    WidgetStateProperty.all<Color>(Colors.transparent),
               ),
               child: Text(widget.name,
                   style: TextStyle(

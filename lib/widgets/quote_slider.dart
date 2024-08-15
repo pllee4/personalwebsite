@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carouselSlider;
 import 'package:flutter/material.dart';
 import 'package:personalwebsite/widgets/quote.dart';
 import 'package:personalwebsite/widgets/quote_author.dart';
@@ -36,7 +36,8 @@ class _QuoteSliderState extends State<QuoteSlider> {
     return result;
   }
 
-  final CarouselController _quoteCarouselController = CarouselController();
+  final carouselSlider.CarouselSliderController _quoteCarouselController =
+      carouselSlider.CarouselSliderController();
 
   List<Widget> generateQuotes() {
     return quoteList.map((quote) => quote).toList();
@@ -47,9 +48,9 @@ class _QuoteSliderState extends State<QuoteSlider> {
     var quoteSliders = generateQuotes();
     return Material(
         type: MaterialType.transparency,
-        child: CarouselSlider(
+        child: carouselSlider.CarouselSlider(
           carouselController: _quoteCarouselController,
-          options: CarouselOptions(
+          options: carouselSlider.CarouselOptions(
             viewportFraction: 1.0,
             height: (MediaQuery.of(context).size.height) / 3,
             autoPlay: true,
