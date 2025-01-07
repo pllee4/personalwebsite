@@ -98,7 +98,7 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
               child: SingleChildScrollView(
                   child: Column(children: <Widget>[
                 Container(
-                  color: Colors.blueGrey[900]!.withOpacity(0.6),
+                  color: Colors.blueGrey[900]!.withValues(alpha: 0.6),
                   height: MediaQuery.of(context).size.height,
                   child: FutureBuilder(
                       future: rootBundle.loadString("markdown/" +
@@ -117,7 +117,8 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
                                     fontSize: 18,
                                   ),
                                   codeblockDecoration: BoxDecoration(
-                                    color: Colors.black87.withOpacity(0.6),
+                                    color:
+                                        Colors.black87.withValues(alpha: 0.6),
                                   )));
                         }
 
