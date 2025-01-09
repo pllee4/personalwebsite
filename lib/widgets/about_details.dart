@@ -138,8 +138,8 @@ class AboutDetailsCard extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20)),
             gradient: LinearGradient(
               colors: [
-                Colors.teal.withOpacity(0.3),
-                Colors.tealAccent.withOpacity(0.3)
+                Colors.teal.withValues(alpha: 0.3),
+                Colors.tealAccent.withValues(alpha: 0.3)
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
