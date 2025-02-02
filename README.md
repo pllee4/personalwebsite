@@ -6,9 +6,7 @@
 
 A Flutter project hosted on [here](https://pinloon-lee.web.app/)
 
-For staging [preview](https://pinloon-lee--staging-1uurjxqy.web.app/)
-
-For development [preview](https://pinloon-lee--development-1ewgqv4y.web.app/)
+For staging [preview](https://pinloon-lee--staging-vl1kg8o0.web.app)
 
 ## TODO list
 
