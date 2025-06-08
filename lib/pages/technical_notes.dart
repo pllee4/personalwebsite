@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:personalwebsite/widgets/custom_expansion_tile.dart';
 
 class TechnicalNotes extends StatefulWidget {
@@ -108,18 +107,18 @@ class _TechnicalNotesState extends State<TechnicalNotes> {
                       builder: (BuildContext context,
                           AsyncSnapshot<String> snapshot) {
                         if (snapshot.hasData) {
-                          return Markdown(
-                              data: snapshot.requireData,
-                              styleSheet: MarkdownStyleSheet(
-                                  p: TextStyle(fontSize: 18),
-                                  code: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
-                                  codeblockDecoration: BoxDecoration(
-                                    color:
-                                        Colors.black87.withValues(alpha: 0.6),
-                                  )));
+                          // return Markdown(
+                          //     data: snapshot.requireData,
+                          //     styleSheet: MarkdownStyleSheet(
+                          //         p: TextStyle(fontSize: 18),
+                          //         code: TextStyle(
+                          //           color: Colors.white,
+                          //           fontSize: 18,
+                          //         ),
+                          //         codeblockDecoration: BoxDecoration(
+                          //           color:
+                          //               Colors.black87.withValues(alpha: 0.6),
+                          //         )));
                         }
 
                         return Center(
