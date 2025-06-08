@@ -104,8 +104,8 @@ class About extends StatelessWidget {
                         children: <Widget>[
                           Expanded(
                               child: IconButton(
-                            icon: Image.asset('images/github-white.png'),
-                            iconSize: 50,
+                            icon: Image.asset('images/github-white.png',
+                                width: 50, height: 50),
                             tooltip: "Github",
                             onPressed: () {
                               launchURL(Uri.parse('https://github.com/pllee4'));
@@ -113,8 +113,8 @@ class About extends StatelessWidget {
                           )),
                           Expanded(
                               child: IconButton(
-                            icon: Image.asset('images/linkedin-white.png'),
-                            iconSize: 50,
+                            icon: Image.asset('images/linkedin-white.png',
+                                width: 50, height: 50),
                             tooltip: "Linkedin",
                             onPressed: () {
                               launchURL(Uri.parse(
@@ -123,8 +123,8 @@ class About extends StatelessWidget {
                           )),
                           Expanded(
                               child: IconButton(
-                            icon: Image.asset('images/medium.png'),
-                            iconSize: 50,
+                            icon: Image.asset('images/medium.png',
+                                width: 50, height: 50),
                             tooltip: "Medium",
                             onPressed: () {
                               launchURL(
@@ -133,8 +133,8 @@ class About extends StatelessWidget {
                           )),
                           Expanded(
                               child: IconButton(
-                            icon: Image.asset('images/book-white.png'),
-                            iconSize: 50,
+                            icon: Image.asset('images/book-white.png',
+                                width: 50, height: 50),
                             tooltip: "Gitbook",
                             onPressed: () {
                               launchURL(
@@ -143,8 +143,8 @@ class About extends StatelessWidget {
                           )),
                           Expanded(
                               child: IconButton(
-                            icon: Image.asset('images/email-white.png'),
-                            iconSize: 50,
+                            icon: Image.asset('images/email-white.png',
+                                width: 50, height: 50),
                             tooltip: "Email",
                             onPressed: () {
                               launchURL(

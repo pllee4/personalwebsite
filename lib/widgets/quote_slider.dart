@@ -15,7 +15,7 @@ class _QuoteSliderState extends State<QuoteSlider> {
   List<Widget> quoteList = [
     ListView(children: [
       Center(child: Quote(quote: '1.02^{365} = 1377.4')),
-      Center(child: Divider()),
+      Center(child: Divider(color: Colors.transparent)),
       Center(child: Quote(quote: '0.98^{365} = 0.0006'))
     ]),
     QuoteAuthor(
