@@ -73,7 +73,7 @@ class Achievement extends StatelessWidget {
                     subtitle1:
                         "Grand Prize (Sustainable Cities and Communities)",
                     url:
-                        "https://engineering.utm.my/innovationday2019/grandchallenges/",
+                        "https://www.facebook.com/photo/?fbid=1652475211554556&set=a.1652474931554584",
                     iconData: Icons.info),
               ]))
         ]));

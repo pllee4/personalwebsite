@@ -146,7 +146,7 @@ class AboutDetailsCard extends StatelessWidget {
             )),
         child: Column(children: [
           ListTile(
-            title: Text(this.title),
+            title: Text(this.title, style: TextStyle(color: Colors.white)),
             trailing: Icon(this.iconData, color: Colors.tealAccent),
           ),
           for (var item in this.detailsList)
