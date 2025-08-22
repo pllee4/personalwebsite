@@ -24,7 +24,7 @@ class CustomPage extends StatelessWidget {
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
                     },
-                    icon: Icon(Icons.menu),
+                    icon: Icon(Icons.menu, color: Colors.white),
                   ),
                 ),
               ),
